@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.phone.com/aboutdevenv/insidephonecomapi/apisecurity.html
+type: Conformance
+api: phone-com-api
+description: >-
+  Conformance assertions for the Phone.com v4 API against cross-cutting industry
+  standards. Assembled from the developer documentation and the published
+  operation catalog; conforms=true only where the docs explicitly support it.
+standards:
+- id: oauth2
+  conforms: true
+  evidence: Documented OAuth 2.0 with authorization_code, client_credentials, password, and refresh_token grants; Bearer tokens on all requests.
+- id: oidc
+  conforms: false
+  evidence: No OpenID Connect / openid-configuration discovery document is published (probe returned 401).
+- id: rfc9457
+  conforms: false
+  evidence: No application/problem+json error format is documented; no machine-readable problem catalog published.
+- id: pagination
+  conforms: true
+  evidence: List endpoints across resources (accounts, extensions, devices, contacts, calls, etc.) are paginated with limit/offset.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism is documented.
+- id: webhooks
+  conforms: true
+  evidence: Event callbacks/listeners surface under /integrations/events (callbacks, listeners, subscriptions, filters, profiles).
+- id: fapi
+  conforms: false
+  evidence: No Financial-grade API profile claimed.
+- id: fhir
+  conforms: false
+  evidence: Not a healthcare data API; HIPAA compliance is organizational, not FHIR conformance.

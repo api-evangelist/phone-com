@@ -1,0 +1,30 @@
+generated: '2026-07-20'
+method: probed
+source: manual probe (curl/dig)
+type: DomainSecurity
+description: >-
+  Transport and DNS security posture probed for the Phone.com public API host
+  and marketing host. Absence of a record is valid, expected data.
+hosts:
+- host: api.phone.com
+  tls: true
+  http_version: HTTP/2
+  hsts: false
+  note: Returns HTTP 401 without a token (all endpoints require OAuth). TLS negotiated successfully.
+- host: www.phone.com
+  tls: true
+  http_version: HTTP/2
+  hsts: false
+dns:
+  domain: phone.com
+  dnssec: false
+  caa: false
+  spf: true
+  spf_record: "v=spf1 ip4:72.1.46.0/23 include:_spf.google.com include:spf.mandrillapp.com include:stspg-customer.com include:spf.smtp2go.com include:_spf.salesforce.com include:amazonses.com include:spf.protection.outlook.com ~all"
+  dmarc: true
+  dmarc_policy: none
+  dmarc_record: "v=DMARC1; p=none; sp=none; rua=mailto:dmarc@phone.com"
+findings:
+- SPF and DMARC are published (DMARC at monitor-only p=none).
+- No DNSSEC (no DS record) and no CAA record at the apex.
+- HSTS not observed on either the API or marketing host.

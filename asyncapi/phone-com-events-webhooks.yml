@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-callbacks
+type: Webhooks
+api: phone-com-api
+description: >-
+  The Phone.com API exposes an event/webhook surface under
+  /v4/accounts/{voip_id}/integrations/events. Callbacks are HTTP endpoints the
+  API calls when events fire; listeners bind event types (with filters and
+  subscriptions) to callbacks. Callbacks and listeners are available at both the
+  account and the extension level. No AsyncAPI document is published, so this is
+  captured as a webhook catalog rather than an AsyncAPI spec (not fabricated).
+delivery: http-callback
+resources:
+- name: callbacks
+  path: /v4/accounts/{voip_id}/integrations/events/callbacks
+  detail: >-
+    CRUD for callback (webhook) targets. A callback used by a listener or as a
+    fallback for another callback cannot be deleted. Also available per extension.
+- name: listeners
+  path: /v4/accounts/{voip_id}/integrations/events/listeners
+  detail: >-
+    Bind event types to callbacks. Listeners have filters and subscriptions
+    (/listeners/{id}/filters, /listeners/{id}/subscriptions). Also per extension.
+- name: profiles
+  path: /v4/accounts/{voip_id}/integrations/events/profiles
+  detail: Event integration profiles grouping event configuration.
+notes: >-
+  Exact event-type names and payload schemas are documented in the ReadMe API
+  reference (apidocs.phone.com) but are not published as a machine-readable
+  AsyncAPI/JSON Schema; not transcribed verbatim here to avoid fabrication.

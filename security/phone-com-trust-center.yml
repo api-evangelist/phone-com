@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://trust.phone.com/
+type: TrustCenter
+url: https://trust.phone.com/
+description: >-
+  Phone.com maintains a public Trust Center listing its compliance attestations
+  and offering security documentation on request.
+certifications:
+- name: SOC 2 Type 2
+  status: attested
+- name: HIPAA
+  status: compliant
+- name: PCI DSS
+  status: compliant
+documents_on_request:
+- Access Control Policy
+- Data Protection Policy
+- Business Continuity / Disaster Recovery Policy
+- Incident Response procedures
+- Risk Management documentation
+- Completed security questionnaires
+notes: >-
+  Policy documents and security reports are shared upon request via the Trust
+  Center access process rather than posted publicly. No subprocessor list or
+  bug-bounty program is published on the Trust Center page.

@@ -1,0 +1,24 @@
+generated: '2026-07-20'
+method: searched
+source: https://apidocs.phone.com/docs/access-token
+type: OAuthScopes
+api: phone-com-api
+docs: https://docs.phone.com/aboutdevenv/insidephonecomapi/apisecurity.html
+flow: oauth2
+token_endpoint: https://api.phone.com/v4/oauth/access-token
+notes: >-
+  Scopes are provided as a space-separated string when requesting an access
+  token and may be combined. Transcribed from the published Phone.com access
+  token documentation; no machine-readable OpenAPI is published so the
+  derive-oauth-scopes.py baseline could not be generated.
+scopes:
+- name: account-owner
+  description: Identity/permission tier granting account-owner level access across the account's resources.
+- name: extension-user
+  description: Identity/permission tier scoped to a single extension user rather than the whole account.
+- name: oauth-management
+  description: >-
+    Required for OAuth token management and API-usage endpoints (list/get/delete
+    access tokens, API statistics, API errors).
+- name: methods:ALL
+  description: Grants access to all Phone.com API methods.

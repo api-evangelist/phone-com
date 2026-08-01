@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: https://apidocs.phone.com/docs/access-token
+type: Authentication
+api: phone-com-api
+docs: https://docs.phone.com/aboutdevenv/insidephonecomapi/apisecurity.html
+summary: >-
+  The Phone.com v4 API authenticates with OAuth 2.0. Callers present a Bearer
+  access token in the Authorization header (prefixed with the keyword "Bearer").
+  All Phone.com API requests require an access token.
+schemes:
+- name: oauth2
+  type: oauth2
+  description: OAuth 2.0 Authorization Framework. Every Phone.com API request requires a valid access token.
+  bearer_format: opaque
+  token_endpoint: https://api.phone.com/v4/oauth/access-token
+  token_endpoint_path: /v4/oauth/access-token
+  in: header
+  header: Authorization
+  scheme_prefix: Bearer
+  grant_types:
+  - authorization_code
+  - client_credentials
+  - password
+  - refresh_token
+  scopes:
+  - account-owner
+  - extension-user
+  - oauth-management
+  - methods:ALL
+notes: >-
+  Scopes are space-separated and may be combined. account-owner and
+  extension-user set the identity/permission tier; oauth-management is required
+  for token- and API-usage-management endpoints; methods:ALL grants access to
+  all API methods. Derived-script path (derive-authentication.py) was not run
+  because no machine-readable OpenAPI is published (the spec sits behind the
+  authenticated api.phone.com host); this profile is transcribed from the
+  published auth docs.

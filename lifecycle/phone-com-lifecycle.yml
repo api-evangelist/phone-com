@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://www.phone.com/api/
+type: Lifecycle
+api: phone-com-api
+versioning:
+  style: uri-path
+  current: v4
+  detail: The Phone.com API is at major version 4 (v4), pinned in the URL path.
+status_page:
+  url: https://status.phone.com/
+  status: 200
+  detail: Public Phone.com system status dashboard.
+deprecation_policy:
+  documented: false
+  detail: >-
+    No formal deprecation policy or RFC 8594 Sunset/Deprecation header usage was
+    found published. Prior major API versions (v1-v3) predate v4.
+sla:
+  documented: false
+  detail: No developer-facing SLA is published for the API tier specifically.
+support: https://support.phone.com/
+notes: >-
+  Lifecycle assembled from the developer site and status dashboard; no
+  machine-readable OpenAPI is published to derive deprecated operations from.

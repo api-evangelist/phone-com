@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: derived
+source: https://apidocs.phone.com/llms.txt
+type: MCPServer
+api: phone-com-api
+status: candidate
+description: >-
+  No official hosted/remote Phone.com MCP server was found. This is a CANDIDATE
+  tool surface derived from the published Phone.com v4 operation catalog
+  (llms.txt), grouped by resource. It is a design proposal, not a running server.
+transport: none
+endpoint: null
+candidate_tools:
+- name: list_accounts
+  maps_to: GET /v4/accounts
+  description: List accounts visible to the authenticated user or client.
+- name: get_account
+  maps_to: GET /v4/accounts/{voip_id}
+  description: Retrieve details of an individual account.
+- name: list_extensions
+  maps_to: GET /v4/accounts/{voip_id}/extensions
+  description: List extensions on the account.
+- name: list_available_phone_numbers
+  maps_to: GET /v4/phone-numbers/available
+  description: Search available phone numbers to purchase.
+- name: list_contacts
+  maps_to: GET /v4/accounts/{voip_id}/contacts
+  description: List account contacts.
+- name: create_contact
+  maps_to: POST /v4/accounts/{voip_id}/contacts
+  description: Add a new account contact.
+- name: send_sms
+  maps_to: POST /v4/accounts/{voip_id}/extensions/{extension_id}/sms
+  description: Send an SMS message from an extension.
+- name: list_call_logs
+  maps_to: GET /v4/accounts/{voip_id}/call-logs
+  description: Retrieve call log records.
+- name: manage_routes
+  maps_to: /v4/accounts/{voip_id}/routes
+  description: Manage call handling rules (routes).
+- name: create_event_callback
+  maps_to: POST /v4/accounts/{voip_id}/integrations/events/callbacks
+  description: Register a webhook callback for account events.
+notes: >-
+  Full operation catalog (333 endpoints) is at llms/phone-com-llms.txt. Promote
+  status to hosted/remote if Phone.com publishes an official MCP server.

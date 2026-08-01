@@ -1,0 +1,60 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/phonedotcom
+type: Packages
+api: phone-com-api
+description: >-
+  First-party Phone.com API client libraries published under the official
+  phonedotcom GitHub organization. The language SDKs (Go, Python, PHP, Android)
+  are swagger-codegen generated from the Phone.com v4 ("Phoenix") API. The
+  phoenix-api-js-client is a front-end JavaScript client and pdc-voip-android-sdk
+  is a native VoIP calling SDK.
+packages:
+- name: API-SDK-go
+  registry: github
+  language: go
+  official: true
+  url: https://github.com/phonedotcom/API-SDK-go
+  notes: swagger-codegen generated Go client for the Phone.com v4 API.
+- name: API-SDK-python
+  registry: github
+  language: python
+  official: true
+  url: https://github.com/phonedotcom/API-SDK-python
+  notes: swagger-codegen generated Python client for the Phone.com v4 API.
+- name: API-SDK-php
+  registry: github
+  language: php
+  official: true
+  url: https://github.com/phonedotcom/API-SDK-php
+  notes: swagger-codegen generated PHP client for the Phone.com v4 API.
+- name: API-SDK-android
+  registry: github
+  language: java
+  official: true
+  url: https://github.com/phonedotcom/API-SDK-android
+  notes: swagger-codegen generated Android/Java client for the Phone.com v4 API.
+- name: phoenix-api-js-client
+  registry: github
+  language: javascript
+  official: true
+  url: https://github.com/phonedotcom/phoenix-api-js-client
+  notes: JavaScript client library for front-end applications using the Phone.com (api.phone.com) API.
+- name: phonecom-api
+  registry: github
+  language: javascript
+  official: true
+  url: https://github.com/phonedotcom/phonecom-api
+  notes: Phone.com API module for Node.js clients.
+- name: pdc-voip-android-sdk
+  registry: github
+  language: java
+  official: true
+  url: https://github.com/phonedotcom/pdc-voip-android-sdk
+  notes: Native Android VoIP calling SDK (softphone), maintained (last pushed 2026).
+- name: '@pipedream/phone_com'
+  registry: npm
+  language: javascript
+  official: false
+  url: https://www.npmjs.com/package/@pipedream/phone_com
+  notes: Third-party Pipedream integration components for Phone.com (not first-party).

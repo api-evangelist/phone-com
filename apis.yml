@@ -1,9 +1,30 @@
 aid: phone-com
 name: Phone Com
-description: Phone Com is a company surfaced as a portfolio company of lightspeed-venture-partners and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  Phone.com is a cloud business phone and unified communications provider for
+  small and mid-sized businesses, offering VoIP calling, SMS/MMS, video
+  conferencing, fax, and virtual phone numbers. Its developer platform is the
+  JSON REST v4 API (codenamed "Phoenix") at api.phone.com, which gives
+  programmatic control over accounts, extensions, devices, phone numbers, call
+  routing (routes, menus, queues, schedules), media, messaging, and an event
+  callback/listener webhook system. Authentication is OAuth 2.0. First-party SDKs
+  are published for Go, Python, PHP, Android, and JavaScript. Surfaced as a
+  portfolio company of Lightspeed Venture Partners and enriched into the API
+  Evangelist network.
 url: https://raw.githubusercontent.com/api-evangelist/phone-com/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://github.com/phonedotcom.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,12 +33,101 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- VoIP
+- Telephony
+- Business Phone
+- SMS
+- Video Conferencing
+- Communications
+- API
+apis:
+- name: phone-com-api
+  description: >-
+    Phone.com v4 ("Phoenix") JSON REST API for managing accounts, extensions,
+    devices, phone numbers, call routing, media, messaging (SMS/fax), and event
+    webhooks. OAuth 2.0 secured.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - VoIP
+  - Telephony
+  - Messaging
+  properties:
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+common:
+- type: DeveloperPortal
+  url: https://apidocs.phone.com/
+- type: Documentation
+  url: https://docs.phone.com/
+- type: APIReference
+  url: https://apidocs.phone.com/reference
+- type: GettingStarted
+  url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+- type: Support
+  url: https://support.phone.com/
+- type: Blog
+  url: https://www.phone.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/phonedotcom
+- type: Pricing
+  url: https://www.phone.com/pricing/
+- type: SignUp
+  url: https://www.phone.com/pricing/
+- type: Login
+  url: https://my.phone.com
+- type: TermsOfService
+  url: https://www.phone.com/general-terms/
+- type: PrivacyPolicy
+  url: https://www.phone.com/privacy-statement/
+- type: Packages
+  url: packages/phone-com-packages.yml
+- type: SDKs
+  url: packages/phone-com-packages.yml
+- type: LLMsTxt
+  url: llms/phone-com-llms.txt
+- type: Authentication
+  url: authentication/phone-com-authentication.yml
+- type: OAuthScopes
+  url: scopes/phone-com-scopes.yml
+- type: Conventions
+  url: conventions/phone-com-conventions.yml
+- type: Lifecycle
+  url: lifecycle/phone-com-lifecycle.yml
+- type: StatusPage
+  url: lifecycle/phone-com-lifecycle.yml
+- type: DomainSecurity
+  url: security/phone-com-domain-security.yml
+- type: TrustCenter
+  url: security/phone-com-trust-center.yml
+- type: Compliance
+  url: security/phone-com-trust-center.yml
+- type: WellKnown
+  url: well-known/phone-com-well-known.yml
+- type: Conformance
+  url: conformance/phone-com-conformance.yml
+- type: MCPServer
+  url: mcp/phone-com-mcp.yml
+- type: Webhooks
+  url: asyncapi/phone-com-events-webhooks.yml
+- type: DataModel
+  url: data-model/phone-com-data-model.yml
+- type: AgentSkill
+  url: skills/_index.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 16
+  pass: local-v1

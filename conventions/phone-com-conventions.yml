@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.phone.com/aboutdevenv/insidephonecomapi/insidephonecomapihome.html
+type: Conventions
+api: phone-com-api
+description: >-
+  Cross-cutting request/response conventions for the Phone.com v4 ("Phoenix")
+  JSON REST API, derived from the developer documentation and the published
+  operation catalog (llms.txt). No machine-readable OpenAPI is published, so
+  field-level details are transcribed from docs rather than derived from a spec.
+base_url: https://api.phone.com/v4
+format: JSON
+auth:
+  style: oauth2-bearer
+  detail: OAuth 2.0 Bearer access token in the Authorization header (see authentication/phone-com-authentication.yml).
+versioning:
+  style: uri-path
+  current: v4
+  detail: The major API version is pinned in the URL path (/v4/...).
+pagination:
+  style: offset-limit
+  detail: >-
+    List endpoints accept limit and offset query parameters and return a
+    paginated envelope. Confirm exact field names against the endpoint docs.
+sync_vs_async:
+  detail: >-
+    Some operations are asynchronous (e.g. async call logs). The docs describe
+    when to use synchronous vs asynchronous calls and how to retrieve
+    asynchronously generated result files.
+sorting_filtering:
+  detail: Many list endpoints support filtering and sorting query parameters.
+idempotency:
+  supported: false
+  detail: No idempotency-key mechanism is documented for the Phone.com API.
+rate_limiting:
+  detail: >-
+    API usage statistics and API error listings are exposed via the
+    api-statistics and api-errors endpoints (require oauth-management scope);
+    explicit rate-limit response headers are not documented.
+errors:
+  detail: See errors handling in the developer docs; a machine-readable RFC 9457 problem catalog is not published.
+cross_links:
+  authentication: authentication/phone-com-authentication.yml
+  scopes: scopes/phone-com-scopes.yml
+  lifecycle: lifecycle/phone-com-lifecycle.yml
+  webhooks: asyncapi/phone-com-events-webhooks.yml

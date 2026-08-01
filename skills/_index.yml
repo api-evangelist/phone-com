@@ -1,0 +1,14 @@
+generated: '2026-07-20'
+method: generated
+source: https://apidocs.phone.com/llms.txt
+type: AgentSkill
+api: phone-com-api
+description: >-
+  Packaged Agent Skills for marquee Phone.com API flows, grounded in real v4
+  operations from the published operation catalog (llms.txt). No provider-shipped
+  AGENTS.md/skills were found, so these are generated from the documented API.
+skills:
+- file: phone-com-send-sms.md
+  name: Send an SMS from a Phone.com extension
+- file: phone-com-register-event-webhook.md
+  name: Register a Phone.com event webhook (callback + listener)

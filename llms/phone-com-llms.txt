@@ -1,0 +1,341 @@
+# Phone.com API Documentation
+
+> The Phone.com API, a.k.a. "Phoenix", provides ways to manage your account without having to log into our control panel.
+
+## Guides
+- [Access Token](https://apidocs.phone.com/docs/access-token.md)
+
+## API Reference
+- [Shows API usage statistics](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-api-statistics.md): Returns statistics of endpoints used by account.  Your token should have 'oauth-management' scope to perform this request.
+- [List API Errors](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-api-errors.md): Get a list of API errors related to your account. Your token should have 'oauth-management' scope to perform this request.
+- [List Access Tokens](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-access-tokens.md): Get a list of access tokens for an account
+- [Get Access Token](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-access-tokens-id.md): Get Access Token
+- [Delete Access Token](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-oauth-access-tokens-id.md): Delete Access Token
+- [List Access Tokens for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-oauth-access-tokens.md): Get a list of access tokens for an extension and account
+- [Get Access Token for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-oauth-access-tokens-id.md): Get Access Token for extension
+- [Delete Access Token for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-oauth-access-tokens-id.md): Delete Access Token for extension
+- [List Contacts](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-contacts.md): Get list of account contacts
+- [Create Contact](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-contacts.md): Add new account contact
+- [List Accounts](https://apidocs.phone.com/reference/get_v4-accounts.md): Get a list of accounts visible to the authenticated user or client
+- [Get Account](https://apidocs.phone.com/reference/get_v4-accounts-voip-id.md): Retrieve details of an individual account
+- [Update Account](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id.md): Update setting of the account
+- [Account cancellation](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-cancellation.md): Creates account cancellation request
+- [Get List of Call Log Files](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-async-call-logs.md): This endpoint provides access to asynchronously generated files with call logs.
+- [List Available Phone Numbers](https://apidocs.phone.com/reference/get_v4-phone-numbers-available.md): Get a list of available phone numbers
+- [List Available Phone Numbers (Public)](https://apidocs.phone.com/reference/get_v4-public-phone-numbers-available.md): Get a list of available phone numbers (public endpoint)
+- [Create Blocked Call](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-blocked-calls.md): Create a blocked call pattern
+- [List Blocked Calls](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-blocked-calls.md): Get a list of pattern used to block incoming or outgoing calls
+- [Get Blocked Call](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-blocked-calls-id.md): Show details of an individual blocked call pattern
+- [Delete Blocked Call](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-blocked-calls-id.md): Delete a blocked call pattern
+- [Create Blocked Call for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-blocked-calls.md): Create a blocked call pattern for extension
+- [List Blocked Call for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-blocked-calls.md): Get a list of pattern used to block incoming or outgoing calls for extension
+- [Get Blocked Call for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-blocked-calls-id.md): Show details of an individual blocked call pattern for extension
+- [Delete Blocked Call for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-blocked-calls-id.md): Delete a blocked call pattern for extension
+- [List Call Logs](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-call-logs.md): Get a list of call details associated with your account
+- [Get Call Log](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-call-logs-id.md): Show details of an individual Call Log entry
+- [Download Call Log](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-call-logs-id-recording-download.md): Download a call log record
+- [List Call Logs for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-call-logs.md): Get a list of call details associated with your account and extension
+- [Get Call Log for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-call-logs-id.md): Show details of an individual Call Log entry for extension
+- [Download Call Log for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-call-logs-id-recording-download.md): Download a call log record for extension
+- [Get Call Report](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-call-reports.md): Returns data about usage of phone service
+- [Get Call Report for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-call-reports.md): Returns data about usage of phone service for extension
+- [List Caller IDs](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-caller-ids.md): Show the Caller ID options a given extension can use.
+- [Create Calls](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-calls.md): Make a phone call. You need to provide caller and callee information. You can provide different payload, so different parameters may be required. These are supported scenarios: 1. caller_phone_number + callee_extension. 2. caller_phone_number + callee_phone_number + caller_extension. 3. caller_extension + callee_phone_number.
+- [Create calls for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-calls.md): Make a phone call for extension. You need to provide caller and callee information. You can provide different payload, so different parameters may be required. These are supported scenarios: 1. caller_phone_number + callee_extension. 2. caller_phone_number + callee_phone_number + caller_extension. 3. caller_extension + callee_phone_number.
+- [List OAuth Clients](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-clients.md): Get a list of OAuth clients for an account. Your token should have 'oauth-management' scope to perform this request.
+- [Get OAuth Client](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-clients-id.md): Show details of an individual OAuth client. Your token should have 'oauth-management' scope to perform this request.
+- [Delete OAuth Client](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-oauth-clients-id.md): Delete an individual OAuth client. Your token should have 'oauth-management' scope to perform this request.
+- [List Conversations](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-conversations.md): This service is used to get the conversations for given filters
+- [List Conversations for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-conversations.md): This service is used to get the conversations for given filters for extension
+- [Get Conversation for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-conversations-id.md): Get Conversation for extension.
+- [Update Conversation for extension](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-conversations-id.md): Update Conversation for extension
+- [Delete Conversation for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-conversations-id.md): This service is used to delete a conversation i.e. to delete all the messages of a conversation for extension
+- [Create device](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-devices.md): The Create Device API allows you to add a Generic SIP device. You may use the extension API to associate the device with the extension, which is required for the device to be operational.  NOTE: If you use the Create Device and at the same request, ask to associate the device to an extension (using the "Lines" Param). The Call Handling Rules (CHR) of the Extension, if existed, will be deleted.   To ensure proper operation of the SIP device, you must add some call handling rules to the extension. Adding CHR is usually done by using the extension API.
+- [List Devices](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices.md): Get a list of VoIP devices associated with your account
+- [Get Device](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices-id.md): Show details of an individual VoIP device
+- [Replace Device](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-devices-id.md): Update the details of an individual VoIP device
+- [Patch Device](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-devices-id.md): Replace parameters on an individual device, only provided parameters will be replaced.
+- [Delete Device](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-devices-id.md): Delete a VoIP device
+- [Get e911 address](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices-id-e911.md): Get current e911 address associated with the device
+- [Sync e911 address](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-devices-id-e911.md): Syncronize device's e911 address
+- [Set new e911 address](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-devices-id-e911.md): Set new e911 address and syncronize it
+- [Get list of callbacks](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-callbacks.md): Returns list of callbacks you have on account (extension)
+- [Create callback](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-callbacks.md): Create callback
+- [Get callback](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-callbacks-id.md): Returns callback
+- [Update callback](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-integrations-events-callbacks-id.md): Updates some properties of the callback
+- [Delete callback](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-callbacks-id.md): Deletes callback. Pay attention, that API will not allow you to delete callback which is used for some listener of as fallback for another callback
+- [Get list of callbacks for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks.md): Returns list of callbacks you have on account (extension)
+- [Create callback for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks.md): Create callback for extension
+- [Get callback for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks-id.md): Returns callback for extension
+- [Update callback for extension](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks-id.md): Updates some properties of the callback.
+- [Delete callback](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks-id.md): Deletes callback. Pay attention, that API will not allow you to delete callback which is used for some listener of as fallback for another callback
+- [Get Statistics](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-callbacks-callback-id-health.md): Returns statistics aggregated per time period.
+- [Get Statistics](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks-id-health.md): Returns statistics aggregated per time period.
+- [Events integration overview](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-overview.md): Returns list of listeners with callbacks, profiles and subscriptions.
+- [Create Events Integration](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-overview.md): This endpoint allows to create listener, callback and subscriptions with one API request
+- [Events integration overview for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-overview.md): Returns list of listeners with callbacks, profiles and subscriptions for extension.
+- [Create Events Integration for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-overview.md): This endpoint allows to create listener, callback and subscriptions with one API request for extension
+- [Get list of listeners](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners.md): Returns list of listeners you have on account (extension)
+- [Create Listener](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-listeners.md): Create a Listener.
+- [Get listener](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-id.md): Returns listener
+- [Update listener](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-integrations-events-listeners-id.md): Updates some properties of the listener.
+- [Delete listener](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-listeners-id.md): Delete listener
+- [Get list of listeners for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners.md): Returns list of listeners you have on account (extension)
+- [Creates listener for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners.md): Creates listener for extension
+- [Get listener for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-id.md): Returns listener for extension
+- [Update listener for extension](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-id.md): Updates some properties of the listener for extension.
+- [Delete listener for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-id.md): Delete listener for extension
+- [Get list of listener's filters](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters.md): Returns list of filters associated with the listener
+- [Create listener's filter](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters.md): Creates filter, associated with the listener
+- [Get listener's filter](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters-id.md): Get filter, associated with the listener
+- [Update listener's filter](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters-id.md): Update filter, associated with the listener
+- [Delete listener's filter](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters-id.md): Removes filter, associated with the listener
+- [Get list of subscriptions](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-listener-id-subscriptions.md): Returns list of subscriptions for listener.
+- [Create subscription](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-listeners-listener-id-subscriptions.md): Creates subscription
+- [Get subscription](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-listener-id-subscriptions-id.md): Returns subscription.
+- [Delete subscription](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-listeners-listener-id-subscriptions-id.md): Deletes subscription.
+- [Get list of subscriptions](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions.md): Returns list of subscriptions
+- [Create subscription](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions.md): Creates subscription
+- [Get subscription](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions-id.md): Returns subscription
+- [Update subscription](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions-id.md): Updates some properties of the subscription.
+- [Delete subscription](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions-id.md): Deletes subscription.
+- [Get list of profiles](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-profiles.md): Returns list of profiles you have on account (extension)
+- [Create profile](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-profiles.md): Create profile
+- [Get profile](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-profiles-id.md): Returns profile
+- [Update profile](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-integrations-events-profiles-id.md): Updates some properties of the profile.
+- [Delete profile](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-profiles-id.md): Deletes profile. Pay attention, that API will not allow you to delete profile which is used for some callback.
+- [Get list of profiles](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles.md): Returns list of profiles you have on account (extension)
+- [Create profile](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles.md): Creates profile
+- [Get profile](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles-id.md): Returns profile
+- [Update profile](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles-id.md): Updates some properties of the profile.
+- [Delete profile](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles-id.md): Deletes profile. Pay attention, that API will not allow you to delete profile which is used for some callback.
+- [List Express Service Codes](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-express-service-codes.md): Get the Express Service Code associated with your account in list format
+- [Get Express Service Codes](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-express-service-codes-id.md): Show details of an account Express Service Code.
+- [List Express Service Codes for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-express-service-codes.md): Get the Express Service Code associated with your extension in list format
+- [Get Express Service Codes for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-express-service-codes-id.md): Get Express Service Codes for extension
+- [List Groups](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-contact-groups.md): Show a list of contact groups belonging to an extension.
+- [Create Group](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-contact-groups.md): Add a new contact group to an account extension.
+- [Get Group](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-contact-groups-id.md): Retrieve the information of a contact group.
+- [Replace Group](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-contact-groups-id.md): Update the information of a contact group.
+- [Delete Group](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-contact-groups-id.md): Delete a contact group from the address book.
+- [List Contacts](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-contacts.md): Show a list of address book contacts.
+- [Create Contact](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-contacts.md): This API lets you add a new address book contact for an extension.
+- [Get Contact](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-contacts-id.md): Retrieve the details of an address book contact.
+- [Replace Contact](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-contacts-id.md): Update the info of a contact in the address book.
+- [Delete Contact](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-contacts-id.md): Delete a contact from the address book.
+- [Patch Contact](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-contacts-id.md): Update the info of a contact in the address book.
+- [List Extensions](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions.md): Get a list of detailed extension information visible to the authenticated user or client.
+- [Create Extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions.md): Create an individual extension.
+- [Get Extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id.md): Show details of an individual extension.
+- [Replace Extension](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id.md): Replace parameters on an individual extension, any missing parameters will be replaced with default values.
+- [Patch Extension](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id.md): Replace parameters on an individual extension, only provided parameters will be replaced.
+- [Delete Extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id.md): Delete an individual extension.
+- [List Extensions for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-extensions.md): Allows extension user to receive list of extensions on account without exposing sensitive information like voicemail PINs, etc.
+- [List Fax](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-fax.md): Get a list of Fax for an account.
+- [Create Fax](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-fax.md): The Create Fax API allows users to send a Fax.
+- [Get Fax](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-fax-id.md): This service shows the details of an individual Fax.
+- [Patch Fax Status](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-fax-id.md): Update the is_new parameter in a Fax record.
+- [Delete Fax](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-fax-id.md): Delete an individual Fax record.
+- [Download Fax](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-fax-id-download.md): Download an individual Fax record into a file in PDF format.
+- [List Fax for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-fax.md): Get a list of Fax for extension.
+- [Create Fax for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-fax.md): The Create Fax API allows users to send a Fax for extension
+- [Get Fax for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-fax-id.md): Get Fax for extension
+- [Patch Fax Status for extension](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-fax-id.md): Update the is_new parameter in a Fax record for extension
+- [Delete Fax for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-fax-id.md): Delete an individual Fax record for extension
+- [Download Fax for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-fax-id-download.md): Download Fax for extension
+- [Request help](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-help-requests.md): Endpoint returns AI-generated response about Phone.com services
+- [List Invoices](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-invoices.md): Get a list of billing statements for an account
+- [Get Invoice](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-invoices-id.md): Show details of an individual billing statement
+- [List Listeners](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-listeners.md): Get a list of listeners for an account.
+- [Create Listener](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-listeners.md): Add a listener object to your account that can be used to subscribe an event.
+- [Get Listener](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-listeners-id.md): Show details of an individual event listener.
+- [Replace Listener](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-listeners-id.md): Update the settings of an individual event listener.
+- [Delete Listener](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-listeners-id.md): Delete an individual event listener.
+- [List Listeners for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-listeners.md): Get a list of listeners for extension
+- [Create Listener for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-listeners.md): Add a listener object to your extension that can be used to subscribe an event
+- [Get Listener for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-listeners-id.md): Show details of an individual event listener for extension
+- [Replace Listener for extension](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-listeners-id.md): Update the settings of an individual event listener for extension
+- [Delete Listener for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-listeners-id.md): Delete an individual event listener for extension
+- [List Live Answer Scripts](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-live-answer.md): Returns list of live answer scripts
+- [Create Live Answer Script](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-live-answer.md): Add a live answer script to your account
+- [Get Live Answer Script](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-live-answer-id.md): Get an individual live answer script
+- [Delete Live Answer](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-live-answer-id.md): Delete an individual live answer
+- [Patch Live Answer](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-live-answer-id.md): Replace parameters on an individual live answer script, only provided partamteres will be replaced
+- [List Live Answer Script Usage](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-live-answer-id-usage.md): Shows which objects in the system use an individual Live Answer Script
+- [List Live Answer Vendors](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-live-answer-vendors.md): Get a list of live available vendors for a live answer
+- [Create Live Answer Vendor Token](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-live-answer-vendors-vendor-id-tokens.md): Creates token for some Live Answer integrations
+- [Create Media](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-media.md): Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+- [List Media](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-media.md): Get a list of media recordings for an account.
+- [Replace Media](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-media-id.md): Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+- [Get Media](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-media-id.md): Show details of an individual media recording (Greeting or Hold Music).
+- [Delete Media](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-media-id.md): Delete an individual media record.
+- [Download Media](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-media-id-download.md): Download an individual media recording
+- [Create Media for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-media.md): Add a media object to your extension that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)
+- [List Media for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-media.md): Get a list of media recordings for extension
+- [Get Media for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-media-id.md): Show details of an individual media recording (Greeting or Hold Music) for extension
+- [Replace Media for extension](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-media-id.md): Update a media object to your extension. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.
+- [Delete Media for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-media-id.md): Delete an individual media record for extension
+- [Download Media for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-media-id-download.md): Download an individual media recording for extension
+- [List Media Usage](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-media-id-usage.md): Shows which objects in the system use an individual media (Greeting or Hold Music)
+- [List Media Usage for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-media-id-usage.md): Shows which objects in the system use an individual media (Greeting or Hold Music) for extension
+- [Create Menu](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-menus.md): Create an individual menu
+- [List Menus](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-menus.md): Get a list of menus for an account
+- [Get Menu](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-menus-id.md): Show details of an individual menu
+- [Replace Menu](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-menus-id.md): Replace an individual menu
+- [Delete Menu](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-menus-id.md): Delete an individual menu
+- [Send Message](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-messages.md): This service is used to send a message.  The maximum message size (along with the attachments) is generally limited to 300KB (MMS 1.2), but recently the MMS 1.3 standard has allowed for a maximum size of 600KB. Wireless carriers, however, can impose their own size restrictions. Phone.com will try to send the file provided via the API as is; however, different vendors might reject the message according to their own policy.  This API endpoint is designated for Person to Person (P2P) communications. Improper use for marketing type purposes or Application to Person (A2P) will cause upstream cellular companies to block the “From” number for SMS use.  If you plan to use this endpoint for A2P or A2A applications that might also entail high volume, i.e., above the FREE limits set by the Phone.com plan, please contact our API support team at apisupport@phone.com to discuss other options.
+- [List Messages](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-messages.md): This service is used to get messages for given filters.
+- [Get Message](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-messages-id.md): Get Message.
+- [Update Message](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-messages-id.md): This service is used to mark a message to read, by setting when it was read, or unread
+- [Delete Message](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-messages-id.md): This service is used to delete a message
+- [Send Message for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-messages.md): This service is used to send a message for extension.  This API endpoint is designated for Person to Person (P2P) communications. Improper use for marketing type purposes or Application to Person (A2P) will cause upstream cellular companies to block the “From” number for SMS use.  If you plan to use this endpoint for A2P or A2A applications that might also entail high volume, i.e., above the FREE limits set by the Phone.com plan, please contact our API support team at apisupport@phone.com to discuss other options.
+- [List Messages for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-messages.md): This service is used to get messages for given filters for extension.
+- [Get Message for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-messages-id.md): Get Message for extension.
+- [Update Message for extension](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-messages-id.md): This service is used to mark a message to read, by setting when it was read, or unread for extension
+- [Delete Message for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-messages-id.md): This service is used to delete a message for extension
+- [Create Access Token](https://apidocs.phone.com/reference/post_v4-oauth-access-token.md): To create an access token via the /oauth/access-token API, an API user may choose any one of the grant types it supports: Authorization Code Grant, Client Credential Grant, Password Credential Grant or Refresh Token Grant. Provide "?mode=details" in query string to receive response identical to GET /v4/oauth/access-token/details
+- [Get Access Token](https://apidocs.phone.com/reference/get_v4-oauth-access-token.md): Retrieve details of an access token, such as scope, expiration and extension ID. Voip ID will be returned as well if scope contains account-owner scope.
+- [Delete Access Token](https://apidocs.phone.com/reference/delete_v4-oauth-access-token.md): Deactivates current access token (it may take up to 5 minutes after API call)
+- [Detailed information about access token](https://apidocs.phone.com/reference/get_v4-oauth-access-token-details.md): Returns full information about current access token
+- [Add note for token](https://apidocs.phone.com/reference/post_v4-oauth-access-token-notes.md): Adds a note for the current token (it may be used for tokens identification and other purposes)
+- [List Orders](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-orders.md): Returns list of previous orders
+- [Create Order](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-orders.md): Order new physical devices. Contact out support to get access to this API.
+- [Get Order](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-orders-id.md): Returns information about the order
+- [Update Order](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-orders-id.md): Allows to manage placed order
+- [List Payment Methods](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-payment-methods.md): Get a list of payment methods for an account.
+- [Create Payment Method](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-payment-methods.md): Create an individual payment method.
+- [Get Payment Method](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-payment-methods-id.md): Show details of an individual payment method.
+- [Patch Payment Method](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-payment-methods-id.md): Replace the status of an individual payment method.
+- [Delete Payment Method](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-payment-methods-id.md): Delete an individual payment method.
+- [List payments](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-payments.md): Return list of payments for account
+- [Make payment](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-payments.md): Charge payment method associated with account
+- [Reserve Phone Number](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-phone-numbers-reserved.md): Reserve Phone Number
+- [Reserve Phone Number (Public)](https://apidocs.phone.com/reference/post_v4-public-phone-numbers-reserved.md): Reserve phone number (public endpoint)
+- [List Phone Numbers](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-phone-numbers.md): Get a list of phone numbers registered to an account.
+- [Create Phone Number](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-phone-numbers.md): Add a phone number to an account.
+- [List Phone Numbers for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-phone-numbers.md): Get a list of phone numbers registered to an account and associated with specific extension.
+- [Delete Phone Number](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-phone-numbers-id.md): Delete an individual Phone number from your account.
+- [Get Phone Number](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-phone-numbers-id.md): Show details of an individual phone number
+- [Patch Phone Number](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-phone-numbers-id.md): Replace parameters on an individual Phone Number
+- [Replace Phone Number](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-phone-numbers-id.md): Update the settings for an existing phone number on your account.
+- [Get Phone Number for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-phone-numbers-id.md): Show details of an individual phone number associated with specific extension
+- [Get Phone Numbers Meta](https://apidocs.phone.com/reference/get_v4-phone-numbers-meta.md): Returns meta information for list of numbers
+- [Get Accessories Price List](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices-accessories-price-list.md): Returns information about accessories available for purchase
+- [Get Public Accessories Price List](https://apidocs.phone.com/reference/get_v4-devices-accessories-price-list.md): Returns information about accessories available for purchase
+- [Get Devices Price List](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices-price-list.md): Returns information about devices available for purchase
+- [Get Public Devices Price List](https://apidocs.phone.com/reference/get_v4-devices-price-list.md): Returns information about devices available for purchase
+- [Return device extensions price](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-device-extensions-price-list.md): Return price (recurrent and prorated) for different type of device extensions
+- [Shipping Methods](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-shipping-price-list.md): Returns information and price of shipping methods for orders
+- [Calculate taxes](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-tax-calculations.md): Helper for tax calculations
+- [Calculate taxes](https://apidocs.phone.com/reference/post_v4-public-tax-calculations.md): Helper for tax calculations
+- [Change password](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-profile-password.md): Changes password for your account
+- [Create Queue Member](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-queues-queue-id-members.md): Add member to the queue
+- [List Queue Members](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-queues-queue-id-members.md): Returns list of the queue members
+- [Get Queue Member](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-queues-queue-id-members-id.md): Returns queue members
+- [Delete Queue Member](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-queues-queue-id-members-id.md): Remove member of the queue
+- [Create Queue](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-queues.md): Create a queue
+- [List Queues](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-queues.md): Get a list of queues for an account
+- [Get Queue](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-queues-id.md): Show details of an individual queue
+- [Replace Queue](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-queues-id.md): Replace parameters on a queue, any missing parameters will be replaced with default values.
+- [Patch Queue](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-queues-id.md): Replace parameters on an individual queue, only provided parameters will be replaced.
+- [Delete Queue](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-queues-id.md): Delete a queue
+- [List OAuth Client Redirect URIs](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-clients-oauth-client-id-redirect-uris.md): Get a list of OAuth Client Redirect URIs for an account. Your token should have 'oauth-management' scope to perform this request.
+- [Create OAuth Client Redirect URI](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-oauth-clients-oauth-client-id-redirect-uris.md): Create an OAuth Client Redirect URI record. Your token should have 'oauth-management' scope to perform this request.
+- [Get OAuth Client Redirect URI](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-clients-oauth-client-id-redirect-uris-id.md): Get details of an OAuth Client Redirect URI record. Your token should have 'oauth-management' scope to perform this request.
+- [Delete OAuth Client Redirect URI](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-oauth-clients-oauth-client-id-redirect-uris-id.md): Delete an OAuth Client Redirect URI record. Your token should have 'oauth-management' scope to perform this request.
+- [Create Route](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-routes.md): Add a new route to the account
+- [List Routes](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-routes.md): Get a list of routes for an account
+- [Get Route](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-routes-id.md): Show details of an individual route
+- [Replace Route](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-routes-id.md): Update the information of a route
+- [Patch Route](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-routes-id.md): Replace parameters on an individual route, only provided parameters will be replaced.
+- [Delete Route](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-routes-id.md): Delete a route from the account
+- [Create Route for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-routes.md): Add a new route to the extension
+- [List Routes for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-routes.md): Get a list of routes for the extension
+- [Get Route for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-routes-id.md): Show details of an individual route for the extension
+- [Replace Route for extension](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-routes-id.md): Update the information on a route for the extension
+- [Patch Route](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-routes-id.md): Replace parameters on an individual route on extension level, only provided parameters will be replaced.
+- [Delete Route for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-routes-id.md): Delete a route from the extension
+- [List SMS](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-sms.md): Get a list of SMS messages for an account.
+- [Create SMS](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-sms.md): Send a SMS to one or a group of recipients.  This API endpoint is designated for Person to Person (P2P) communications. Improper use for marketing type purposes or Application to Person (A2P) will cause upstream cellular companies to block the “From” number for SMS use.  If you plan to use this endpoint for A2P or A2A applications that might also entail high volume, i.e., above the FREE limits set by the Phone.com plan, please contact our API support team at apisupport@phone.com to discuss other options.
+- [Delete List SMS](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-sms.md): Delete a list of SMS messages for an account
+- [Get SMS](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-sms-id.md): This service shows the details of an individual SMS.
+- [Patch SMS Status](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-sms-id.md): Update the is_new parameter in a sms record.
+- [Delete SMS](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-sms-id.md): This service delete an individual SMS.
+- [List SMS for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-sms.md): Get a list of SMS messages for extension
+- [Create SMS for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-sms.md): Send a SMS to one or a group of recipients for extension.  This API endpoint is designated for Person to Person (P2P) communications. Improper use for marketing type purposes or Application to Person (A2P) will cause upstream cellular companies to block the “From” number for SMS use.  If you plan to use this endpoint for A2P or A2A applications that might also entail high volume, i.e., above the FREE limits set by the Phone.com plan, please contact our API support team at apisupport@phone.com to discuss other options.
+- [Delete List SMS for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-sms.md): Delete a list of SMS messages for extension
+- [Get SMS for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-sms-id.md): This service shows the details of an individual SMS for extension
+- [Patch SMS Status for extension](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-sms-id.md): Update the is_new parameter in a sms record for extension
+- [Delete SMS for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-sms-id.md): This service delete an individual SMS for extension
+- [Create Scheduled Request](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-scheduled-requests.md): Create scheduled request to API
+- [List Scheduled Requests](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-scheduled-requests.md): Returns list of scheduled requests for account
+- [Get Scheduled Request](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-scheduled-requests-id.md): Returns specific scheduled request
+- [Delete Scheduled Request](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-scheduled-requests-id.md): Deletes scheduled request
+- [Create Scheduled Request for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-scheduled-requests.md): Create scheduled request to API for extension
+- [List Scheduled Requests for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-scheduled-requests.md): Returns list of scheduled requests for extension
+- [Get Scheduled Request for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-scheduled-requests-id.md): Returns specific scheduled request for extension
+- [Delete Scheduled Request for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-scheduled-requests-id.md): Deletes scheduled request for extension
+- [List Schedules](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-schedules.md): Get a list of schedules for an account
+- [Create Schedule](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-schedules.md): Create a schedule for an account
+- [Get Schedule](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-schedules-id.md): Show details of an individual schedule
+- [Replace Schedule](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-schedules-id.md): Replace a schedule
+- [Patch Schedule](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-schedules-id.md): Replace parameters on an individual schedule, only provided parameters will be replaced.
+- [Delete Schedule](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-schedules-id.md): Delete a schedule
+- [List Subaccounts](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-subaccounts.md): Get a list of subaccounts for the authenticated user or client
+- [Create Subaccount](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-subaccounts.md): Add a subaccount for the authenticated user or client
+- [Request Verification Code](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-subaccounts-verification.md): Request verification code (confimation code will be sent to email, email should match username)
+- [Submit Support Request](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-support-requests.md): Send support request to API team
+- [Submit Support Request for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-support-requests.md): Send support request to API team
+- [Ping functionality](https://apidocs.phone.com/reference/get_v4-ping.md): Returns information about the request. Supposed to be used for API health check.
+- [Swagger file](https://apidocs.phone.com/reference/get_swagger-yaml.md): Returns swagger file in YAML format
+- [List Transactions](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-invoices-invoice-id-transactions.md): Get a list of transactions from some billing statement
+- [Get Transaction](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-invoices-invoice-id-transactions-id.md): Show details of an individual transaction
+- [Create Trunk](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-trunks.md): Add a trunk record with SIP information
+- [List Trunks](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-trunks.md): Get a list of trunks for an account
+- [Get Trunk](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-trunks-id.md): Show details of an individual trunk
+- [Replace Trunk](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-trunks-id.md): Replace parameters in a trunk
+- [Patch Trunk](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-trunks-id.md): Replace parameters on an individual trunk, only provided parameters will be replaced.
+- [Delete Trunk](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-trunks-id.md): Delete a trunk from account
+- [Get list of users](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-users.md): Get list of users on account
+- [Create user](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-users.md): Adds user for account
+- [Get user](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-users-id.md): Get specific user
+- [Delete user](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-users-id.md): Deletes user
+- [Update user](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-users-id.md): Updates user profile
+- [Get user statistics](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-users-statistics.md): Returns users statistics
+- [Invite](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-users-id-invitations.md): Sends invitation email
+- [Reset passwrod](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-users-id-password-reset-requests.md): Resets user's password
+- [Set avatar](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-users-id-avatar.md): Sets user's avatar
+- [List Conferences](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-video-conferences.md): Returns a list of all extension conferences with details (only conferences 18 months ahead are available).
+- [Schedule Conference](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-video-conferences.md): Creates a new extension conference and sends email invitations to the conference participants.
+- [Get Conference](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-video-conferences-id.md): Returns conference data by id.
+- [Replace Conference](https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-video-conferences-id.md): Replaces an extension conference and sends email notifications to the conference participants.
+- [Cancel Conference](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-video-conferences-id.md): Deletes an extension conference by id and informs the conference participants via email.
+- [List Videos](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-video.md): Get a list of videos
+- [Create Video](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-video.md): Create a video
+- [Patch Video Status](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-video.md): Update a video
+- [Get Video Conference Token](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-video-token.md): Returns token for video conference service integration
+- [List User Videos](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-video-users.md): Get a list of user videos
+- [Create User Video](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-video-users.md): Create a user video
+- [Get User Video](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-video-users-id.md): Get a user video
+- [Delete User Video](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-video-users-id.md): Delete a user video
+- [List User Videos for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-video-user.md): Get a list of user videos for extension
+- [Create User Video for extension](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-video-user.md): Create a user video for extension. The user will receive an email with steps to connect to their video bridge and additional operational instructions.
+- [List Voicemail](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-voicemail.md): Get a list of voicemail messages for an account
+- [Delete Voicemail (multiple)](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-voicemail.md): The endpoint .../voicemail (combined with the HTTP method DELETE) allows the user to delete one or more voicemail in one shot. Be careful when using this API and pass the correct Query Params as needed.
+- [Get Voicemail](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-voicemail-id.md): This service shows the details of an individual voicemail
+- [Patch Voicemail Status](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-voicemail-id.md): Update the is_new parameter in a voicemail
+- [Delete Voicemail](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-voicemail-id.md): Delete a voicemail
+- [Download Voicemail](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-voicemail-id-download.md): Download a voicemail recording
+- [List Voicemail for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-voicemail.md): Get a list of voicemail messages for the extension
+- [Delete Voicemail (multiple) for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-voicemail.md): The endpoint .../voicemail (combined with the HTTP method DELETE) allows the user to delete one or more voicemail in one shot. Be careful when using this API and pass the correct Query Params as needed.
+- [Get Voicemail for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-voicemail-id.md): This service shows the details of an individual voicemail for extension
+- [Patch Voicemail Status for extension](https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-voicemail-id.md): Update the is_new parameter in a voicemail for extension
+- [Delete Voicemail for extension](https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-voicemail-id.md): Delete a voicemail for extension
+- [Download Voicemail for extension](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-voicemail-id-download.md): Download a voicemail recording for extension
+- [List Capmaigns](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-10dlc-campaigns.md): Returns list of registered campaigns
+- [Register Campaign](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-10dlc-campaigns.md): Registers campaign with 10 DLC
+- [List Registered Brands](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-10dlc-brands.md): Returns list of registered brands
+- [Register Brand](https://apidocs.phone.com/reference/post_v4-accounts-voip-id-10dlc-brands.md): Registers brand with 10 DLC
+- [List Registered Phone Numbers](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-10dlc-phone-numbers.md): Returns list of phone number registered for SMS
+- [List snapshots](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-snapshots.md): Returns list of accounts snapshots. Contact support to request one.
+- [Get snapshot](https://apidocs.phone.com/reference/get_v4-accounts-voip-id-snapshots-id.md): Returns the snapshot. Add ?with_files=1 to receive URLs of the snapshot's files

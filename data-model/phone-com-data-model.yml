@@ -1,0 +1,72 @@
+generated: '2026-07-20'
+method: derived
+source: https://apidocs.phone.com/llms.txt
+type: DataModel
+api: phone-com-api
+description: >-
+  Entity graph derived from the Phone.com v4 operation catalog (URL path
+  nesting). Relationships are inferred from resource nesting under
+  /accounts/{voip_id}/... and /extensions/{extension_id}/...; field-level
+  id-references were not derivable because no OpenAPI schema is published.
+entities:
+- name: account
+  key: voip_id
+  detail: Top-level tenant. Root of most resource paths (/v4/accounts/{voip_id}/...).
+- name: extension
+  belongs_to: account
+  detail: A user/line under an account; parents extension-scoped resources.
+- name: device
+  belongs_to: account
+- name: phone_number
+  belongs_to: account
+- name: contact
+  belongs_to: account
+- name: route
+  belongs_to: account
+  detail: Call handling rules.
+- name: menu
+  belongs_to: account
+  detail: Auto-attendant / IVR menus.
+- name: queue
+  belongs_to: account
+- name: schedule
+  belongs_to: account
+- name: media
+  belongs_to: account
+  detail: Audio/media objects.
+- name: trunk
+  belongs_to: account
+  detail: SIP trunks.
+- name: call
+  belongs_to: account
+- name: sms
+  belongs_to: extension
+- name: voicemail
+  belongs_to: extension
+- name: fax
+  belongs_to: account
+- name: video_conference
+  belongs_to: extension
+- name: listener
+  belongs_to: account
+  detail: Event listener binding event types to callbacks (has_many filters, subscriptions).
+- name: callback
+  belongs_to: account
+  detail: Webhook target invoked on events.
+- name: payment_method
+  belongs_to: account
+relationships:
+- from: extension
+  to: account
+  type: belongs_to
+  via: voip_id
+- from: listener
+  to: callback
+  type: has_one
+  via: callback binding
+- from: listener
+  to: filter
+  type: has_many
+- from: listener
+  to: subscription
+  type: has_many
