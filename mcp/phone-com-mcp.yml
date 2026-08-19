@@ -4,10 +4,9 @@ source: https://apidocs.phone.com/llms.txt
 type: MCPServer
 api: phone-com-api
 status: candidate
-description: >-
-  No official hosted/remote Phone.com MCP server was found. This is a CANDIDATE
-  tool surface derived from the published Phone.com v4 operation catalog
-  (llms.txt), grouped by resource. It is a design proposal, not a running server.
+description: No official hosted/remote Phone.com MCP server was found. This is a CANDIDATE tool surface
+  derived from the published Phone.com v4 operation catalog (llms.txt), grouped by resource. It is a design
+  proposal, not a running server.
 transport: none
 endpoint: null
 candidate_tools:
@@ -41,6 +40,10 @@ candidate_tools:
 - name: create_event_callback
   maps_to: POST /v4/accounts/{voip_id}/integrations/events/callbacks
   description: Register a webhook callback for account events.
-notes: >-
-  Full operation catalog (333 endpoints) is at llms/phone-com-llms.txt. Promote
-  status to hosted/remote if Phone.com publishes an official MCP server.
+notes: Full operation catalog (333 endpoints) is at llms/phone-com-llms.txt. Promote status to hosted/remote
+  if Phone.com publishes an official MCP server.
+deployment:
+  mode: none
+  verified: derived
+  checked: '2026-08-12'
+  source: catalog MCP census
