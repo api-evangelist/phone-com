@@ -42,6 +42,14 @@ tags:
 - SMS
 - Video Conferencing
 - Communications
+tags_raw:
+- Company
+- VoIP
+- Telephony
+- Business Phone
+- SMS
+- Video Conferencing
+- Communications
 - API
 apis:
 - name: phone-com-api
