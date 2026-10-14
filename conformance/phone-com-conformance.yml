@@ -3,10 +3,8 @@ method: searched
 source: https://docs.phone.com/aboutdevenv/insidephonecomapi/apisecurity.html
 type: Conformance
 api: phone-com-api
-description: >-
-  Conformance assertions for the Phone.com v4 API against cross-cutting industry
-  standards. Assembled from the developer documentation and the published
-  operation catalog; conforms=true only where the docs explicitly support it.
+description: Conformance assertions for the Phone.com v4 API against cross-cutting industry standards. Assembled from the developer documentation
+  and the published operation catalog; conforms=true only where the docs explicitly support it.
 standards:
 - id: oauth2
   conforms: true
@@ -32,3 +30,6 @@ standards:
 - id: fhir
   conforms: false
   evidence: Not a healthcare data API; HIPAA compliance is organizational, not FHIR conformance.
+- id: openapi-3.0
+  conforms: true
+  evidence: the document declares 3.0.0

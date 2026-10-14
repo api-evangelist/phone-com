@@ -1,0 +1,6 @@
+generated: '2026-10-14'
+method: probed
+generator: harvest-llms.py
+source: https://apidocs.phone.com/llms.txt
+bytes: 59338
+note: saved verbatim; the provider's own document

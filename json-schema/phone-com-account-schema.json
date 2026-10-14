@@ -1,0 +1,292 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/phone-com/main/json-schema/phone-com-account-schema.json",
+  "title": "Account",
+  "x-generated": "2026-10-14",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/Account",
+  "type": "object",
+  "properties": {
+    "username": {
+      "type": "string",
+      "description": "Username"
+    },
+    "password": {
+      "type": "string",
+      "description": "Password"
+    },
+    "verification_email": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Email verification code (if required)"
+    },
+    "cc_token": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "maxLength": 32,
+      "description": "Credit card token from Credit Card endpoint"
+    },
+    "billing_day": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 2,
+      "maximum": 28,
+      "description": "Day of account's monthly billing cycle beginning (available for special integrations only)"
+    },
+    "agent_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "description": "Agent ID (available for special integrations only)"
+    },
+    "tos_accept_date": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1760553075,
+      "maximum": 1760643075,
+      "description": "Timestamp of acceptance of Terms of Service. It may not be more than 1 day in the past or 1 hour in the future."
+    },
+    "tracking_data": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1,
+      "description": "Tracking data (available for special integrations only)"
+    },
+    "contact": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Contact ID. Read-only"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name"
+        },
+        "company": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 70,
+          "description": "Name of the contact's company"
+        },
+        "address": {
+          "properties": {
+            "line_1": {
+              "type": "string",
+              "maxLength": 55,
+              "description": "Address line 1"
+            },
+            "line_2": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 55,
+              "description": "Address line 2"
+            },
+            "city": {
+              "type": "string",
+              "maxLength": 40,
+              "description": "City"
+            },
+            "province": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 40,
+              "description": "Contact province"
+            },
+            "postal_code": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 40,
+              "description": "Contact postal code"
+            },
+            "country": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 2,
+              "description": "Country name"
+            }
+          },
+          "required": [
+            "line_1",
+            "city",
+            "country"
+          ],
+          "description": "Contact Address"
+        },
+        "phone": {
+          "type": "string",
+          "pattern": "^\\+?([0-9\\-\\(\\)\\s]*)$",
+          "description": "Contact phone number"
+        },
+        "fax": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 25,
+          "description": "Contact fax number"
+        },
+        "primary_email": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Primary email"
+        },
+        "alternate_email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100,
+          "description": "Alternate email"
+        }
+      },
+      "required": [
+        "name",
+        "phone",
+        "primary_email"
+      ],
+      "description": "Contact Objects"
+    },
+    "billing_contact": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Billing contact ID. Read-only"
+        },
+        "name": {
+          "type": "string",
+          "description": "Billing contact name"
+        },
+        "company": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 70,
+          "description": "Billing contact company"
+        },
+        "address": {
+          "properties": {
+            "line_1": {
+              "type": "string",
+              "maxLength": 55,
+              "description": "Billing contact street address"
+            },
+            "line_2": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 55,
+              "description": "Billing contact street address 2"
+            },
+            "city": {
+              "type": "string",
+              "maxLength": 40,
+              "description": "Billing contact city"
+            },
+            "province": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 40,
+              "description": "Billing contact province"
+            },
+            "postal_code": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 40,
+              "description": "Billing contact postal code"
+            },
+            "country": {
+              "type": "string",
+              "minLength": 2,
+              "maxLength": 2,
+              "description": "Billing contact country"
+            }
+          },
+          "required": [
+            "line_1",
+            "city",
+            "country"
+          ],
+          "description": "Billing contact address"
+        },
+        "phone": {
+          "type": "string",
+          "pattern": "^\\+?([0-9\\-\\(\\)\\s]*)$",
+          "description": "Billing contact phone"
+        },
+        "fax": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 25,
+          "description": "Billing contact fax"
+        },
+        "primary_email": {
+          "type": "string",
+          "maxLength": 100,
+          "description": "Billing contact email"
+        },
+        "alternate_email": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100,
+          "description": "Billing contact alternate email"
+        }
+      },
+      "required": [
+        "name",
+        "phone",
+        "primary_email"
+      ],
+      "description": "Billing Contact Objects"
+    }
+  },
+  "required": [
+    "username",
+    "password"
+  ]
+}

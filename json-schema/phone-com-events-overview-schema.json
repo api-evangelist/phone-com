@@ -1,0 +1,286 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/phone-com/main/json-schema/phone-com-events-overview-schema.json",
+  "title": "EventsOverview",
+  "x-generated": "2026-10-14",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/EventsOverview",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "default": "2.0.0",
+      "enum": [
+        "1.0.0",
+        "1.1.0",
+        "2.0.0"
+      ],
+      "description": "Listener version"
+    },
+    "callback_id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Callback ID (profile can be also defined as :callback)"
+    },
+    "expires_at": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1,
+      "default": null,
+      "description": "Define expiration time for listener"
+    },
+    ":callback": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 1,
+          "maxLength": 128,
+          "default": null,
+          "description": "Event name"
+        },
+        "fallback_callback_id": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "default": null,
+          "description": "Fallback callback ID"
+        },
+        "profile_id": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0,
+          "default": null,
+          "description": "ID of the profile (profile can be also defined as :profile)"
+        },
+        "enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Callback status"
+        },
+        "mode": {
+          "type": "string",
+          "default": "HTTPS",
+          "enum": [
+            "HTTPS",
+            "HTTP",
+            "APPLICATION",
+            "EMAIL"
+          ],
+          "description": "Callback mode"
+        },
+        "config": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string",
+              "description": "URL of the callback"
+            },
+            "method": {
+              "type": "string",
+              "enum": [
+                "GET",
+                "POST",
+                "PUT",
+                "PATCH",
+                "DELETE"
+              ],
+              "description": "Method of the callback  (default is POST)"
+            },
+            "headers": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "Header name"
+                  },
+                  "value": {
+                    "type": "string",
+                    "description": "Header value"
+                  }
+                },
+                "required": [
+                  "name",
+                  "value"
+                ]
+              },
+              "description": "Headers , (default is null)"
+            },
+            "timeout": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "Callback timeout (default is null, system timeout will be used)"
+            },
+            "email": {
+              "type": "string",
+              "description": "Email for events delivery"
+            },
+            "mode": {
+              "type": "string",
+              "enum": [
+                "json",
+                "text"
+              ],
+              "description": "email contents type: json or text (default is json)"
+            },
+            "rate_limit": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "number": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000,
+                  "description": "Number of events allowed in the period"
+                },
+                "period": {
+                  "type": "integer",
+                  "minimum": 10,
+                  "maximum": 3600,
+                  "description": "Period in seconds"
+                }
+              },
+              "required": [
+                "number",
+                "period"
+              ],
+              "description": "Rate limit (applicable for 'email' type of callback only)"
+            },
+            "application": {
+              "type": "string",
+              "enum": [
+                "sms-autoresponder",
+                "google-analytics"
+              ],
+              "description": "Application name (applicable for 'application' type of callback only)"
+            },
+            "parameters": {
+              "type": "object",
+              "description": "Application invocation parameters (applicable for 'application' type of callback only)"
+            }
+          },
+          "description": "Config object, configuration of the callback"
+        },
+        ":profile": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Profile name"
+            },
+            "support_email": {
+              "type": "string",
+              "description": "Email for callback's support (will be used in case of problems with callback)"
+            }
+          },
+          "required": [
+            "name",
+            "support_email"
+          ],
+          "description": "Profile object (profile can be also defined as profile_id)"
+        }
+      },
+      "required": [
+        "config"
+      ],
+      "description": "Callback object"
+    },
+    ":subscriptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          ":tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "inbound",
+                "outbound",
+                "call",
+                "new-call",
+                "connecting-call",
+                "connected-call",
+                "completed-call",
+                "first-leg",
+                "not-first-leg",
+                "to-did",
+                "from-did",
+                "to-extension",
+                "from-extension",
+                "message",
+                "sms-message",
+                "mms-message",
+                "*ms-message",
+                "api-error",
+                "api-error-trusted",
+                "call-log",
+                "recording",
+                "call-recording",
+                "message-status",
+                "voicemail-recording"
+              ]
+            },
+            "description": "Array of tags for the subscription (&& logic is being applied)"
+          }
+        },
+        "required": [
+          ":tags"
+        ]
+      },
+      "description": "List of subscriptions"
+    },
+    ":filters": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "filter_type": {
+            "type": "string",
+            "enum": [
+              "number",
+              "schedule"
+            ],
+            "description": "Type of the filter. Available types are \"number\", \"schedule\"."
+          },
+          "filter_value": {
+            "type": "object",
+            "description": "Filter's configuration.\nFor \"number\" you can provide one of the properties: \"eq\" (exact number), \"in\" (array of allowed numbers), \"match\" (number with \"%\" for nothing or any available characters).\nFor \"schedule\" provide \"id\" with the ID of the schedule."
+          },
+          "not_logic": {
+            "type": "boolean",
+            "description": "Enable inverted logic (event should not match filter to be included)"
+          }
+        },
+        "required": [
+          "filter_type",
+          "filter_value"
+        ]
+      },
+      "description": "Listener filters"
+    }
+  },
+  "required": [
+    ":subscriptions"
+  ]
+}

@@ -1,0 +1,410 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/phone-com/main/json-schema/phone-com-route-schema.json",
+  "title": "Route",
+  "x-generated": "2026-10-14",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/Route",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Route Name"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "filter": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "properties": {
+              "type": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "Filter type"
+              },
+              "schedule": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "id": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "description": "Schedule ID"
+                  },
+                  "name": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "description": "Schedule name"
+                  }
+                },
+                "description": "Schedule object for being used as a filter"
+              },
+              "group": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "id": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "description": "Contacts group ID"
+                  },
+                  "name": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "description": "Contacts group name"
+                  }
+                },
+                "description": "Contacts group object for being used as a filter"
+              },
+              "contact": {
+                "type": [
+                  "object",
+                  "null"
+                ],
+                "properties": {
+                  "id": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "description": "Contact ID"
+                  },
+                  "name": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "description": "Contact name"
+                  }
+                },
+                "description": "Contact object for being used as a filter"
+              }
+            },
+            "description": "Rule filter (apply rule only if it matches the filter)"
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "action": {
+                  "type": "string",
+                  "enum": [
+                    "abcn_queue",
+                    "directory",
+                    "disconnect",
+                    "fax",
+                    "forward",
+                    "greeting",
+                    "hold",
+                    "menu",
+                    "queue",
+                    "trunk",
+                    "voicemail",
+                    "live_answer"
+                  ],
+                  "description": "Routing action"
+                },
+                "timeout": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 5,
+                  "maximum": 90,
+                  "description": "Timeout for the action"
+                },
+                "items": {
+                  "type": [
+                    "array",
+                    "null"
+                  ],
+                  "items": {
+                    "type": [
+                      "object",
+                      "null"
+                    ],
+                    "properties": {
+                      "type": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "enum": [
+                          "phone_number",
+                          "extension"
+                        ],
+                        "description": "Must equal phone_number or extension"
+                      },
+                      "number": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Required if type = 'phone_number'. Phone number that callers should be directed to"
+                      },
+                      "extension": {
+                        "type": [
+                          "object",
+                          "null"
+                        ],
+                        "properties": {
+                          "id": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "minimum": 1,
+                            "description": "ID of the extension"
+                          },
+                          "extension": {
+                            "type": [
+                              "integer",
+                              "null"
+                            ],
+                            "minimum": 1,
+                            "description": "Extension number that callers may dial"
+                          },
+                          "name": {
+                            "type": [
+                              "string",
+                              "null"
+                            ],
+                            "description": "User-supplied name for the extension"
+                          }
+                        },
+                        "description": "Required if type = 'extension'. Extension that callers should be directed to"
+                      },
+                      "caller_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Must equal calling_number or called_number. Defines which phone number should be used for Caller ID"
+                      },
+                      "voice_tag": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Optional string. If screening = TRUE, this value will be passed into our Text-To-Speech engine and used to inform the caller of who they have reached"
+                      },
+                      "distinctive_ring": {
+                        "type": [
+                          "string",
+                          "null"
+                        ],
+                        "description": "Must equal one of: DEFAULT, STYLE_2, STYLE_3, STYLE_4, STYLE_5, STYLE_6, STYLE_7, STYLE_8, or STYLE_9. Identifies the style of ring tone you will hear when an incoming call is waiting"
+                      }
+                    }
+                  },
+                  "description": "Array of Forward Item Objects"
+                },
+                "queue": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "description": "Queue ID"
+                    }
+                  },
+                  "description": "Queue that this action refers to. Input must be a Queue Lookup Object."
+                },
+                "menu": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "description": "Menu ID"
+                    }
+                  },
+                  "description": "Menu that this action refers to. Input must be a Menu Lookup Object."
+                },
+                "greeting": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "description": "Media ID"
+                    }
+                  },
+                  "description": "Greeting that this action refers to. Input must be a Media Lookup Object. Must refer to a media recording that has is_hold_music set to FALSE"
+                },
+                "hold_music": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "description": "Media ID"
+                    },
+                    "duration": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 0,
+                      "description": "Duration"
+                    }
+                  },
+                  "description": "Hold Music to be played while callers are waiting. Input must be a Media Lookup Object. Must refer to a media recording that has is_hold_music set to TRUE. Default is to play a standard ring tone"
+                },
+                "trunk": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "description": "Trunk ID"
+                    }
+                  },
+                  "description": "Trunk that this action refers to. Input must be a Trunk Lookup Object."
+                },
+                "extension": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "description": "Extension ID"
+                    }
+                  },
+                  "description": "Extension that this action refers to. Input must be an Extension Lookup Object"
+                },
+                "voice_tag": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "description": "Voice tag"
+                },
+                "script": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1,
+                      "description": "ID of live receptionist script"
+                    }
+                  },
+                  "description": "Live receptionist script"
+                }
+              },
+              "required": [
+                "action"
+              ]
+            },
+            "description": "Array of Action Objects"
+          }
+        },
+        "required": [
+          "actions"
+        ]
+      },
+      "description": "Array of Rule Set Objects"
+    },
+    "extension": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "Extension ID"
+        },
+        "extension": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "Extension number"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Extension name"
+        }
+      },
+      "description": "Extension to which this route belongs"
+    }
+  },
+  "required": [
+    "rules"
+  ]
+}

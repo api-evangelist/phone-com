@@ -1,0 +1,76 @@
+generated: '2026-10-14'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+format: custom
+envelope:
+  media_type: application/json
+  schema: null
+coverage:
+  operations: 333
+  statuses_declared: 9
+problems:
+- status: 400
+  title: Bad Request
+  description: Bad Request
+  operations: 332
+  media_types:
+  - application/json
+  schema: null
+- status: 401
+  title: Unauthorized
+  description: Unauthorized
+  operations: 333
+  media_types:
+  - application/json
+  schema: null
+- status: 402
+  title: Payment Required
+  description: Payment Required
+  operations: 332
+  media_types:
+  - application/json
+  schema: null
+- status: 403
+  title: Forbidden
+  description: Forbidden
+  operations: 332
+  media_types:
+  - application/json
+  schema: null
+- status: 404
+  title: Not Found
+  description: Not Found
+  operations: 332
+  media_types:
+  - application/json
+  schema: null
+- status: 409
+  title: Conflict
+  description: Conflict
+  operations: 332
+  media_types:
+  - application/json
+  schema: null
+- status: 422
+  title: Unprocessable Content
+  description: Validation failed
+  operations: 332
+  media_types:
+  - application/json
+  schema: null
+- status: 429
+  title: Too Many Requests
+  description: Too Many Requests
+  operations: 333
+  media_types:
+  - application/json
+  schema: null
+- status: 500
+  title: Internal Server Error
+  description: Internal Server Error
+  operations: 333
+  media_types:
+  - application/json
+  schema: null

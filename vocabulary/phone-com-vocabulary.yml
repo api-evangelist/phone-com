@@ -1,0 +1,454 @@
+generated: '2026-10-14'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+vocabulary:
+  name: Phone Com Domain Vocabulary
+  description: 'Terms declared by Phone Com''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-14'
+  terms:
+  - term: API Endpoint Statistics
+    definition: Information about API usage statics.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: API Errors
+    definition: We save API errors related to your account so you can analyze issues if for some reason you don't log error responses in your
+      application
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Access Tokens
+    definition: Allows you to manage access tokens issued for your account.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Account Contacts
+    definition: Contact which can be used for different needs, such as ordering devices
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Accounts
+    definition: This page gives an overview of how to interact with your accounts.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Asynchronous Call Logs
+    definition: Phone.com created the async-call-logs API endpoint to allow customers to download large amounts of call logs without encountering
+      the normal Phone.com API Rate Limits. This service needs to be activated on a per-customer basis and collect the call log data in the requested
+      customer's format. (please call our support to activate and better define the format if needed) When the async-call-logs endpo
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Available Phone Numbers
+    definition: This service lists phone numbers that are available for purchase through Phone.com.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Blocked Calls
+    definition: The Blocked Calls API allows users block incoming calls from specific phone numbers. If only a part of a telephone number is provided,
+      calls with callers ID matching the pattern will be blocked. For example, pattern '+1212' will block all calls from NY 212 area code.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Call Logs
+    definition: The Call Logs API returns a list of call detail records for the account. The result includes the id, start time, creation time,
+      caller ID, called number, direction of call, and duration in seconds. If applicable, the result may also include final action, final action
+      duration, listen URL, and/or transcription. Since the call logs usually contains many calls, API users may use filters such as start
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Call Reports
+    definition: Aggregated calls statistics
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Caller IDs
+    definition: API users with Extension scope access token does not have access to the Phone Number API. This API helps user to retrieve available
+      account phone numbers to be used as caller id via the /Calls API.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Calls
+    definition: This API places a call to the caller phone number (or caller extension ID). If that number (or extension) answers within the timeout
+      period, then the callee DID (or extension) will be connected to the call.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Clients
+    definition: Phone.com API supports OAuth 2.0 Authorization Framework, which enables a third-party application (client) to obtain limited access
+      to HTTP API requests. This page describes how to use the /oauth/clients API to list, get and delete client.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Conversations
+    definition: Represents overview of your messaging history in messenger-like format.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Devices
+    definition: Extension on your Phone.com account may have SIP devices associated with them. The Device API provides information about those
+      SIP devices, such as the SIP credentials required.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Events Callbacks
+    definition: 'Callbacks represent URLs on your side which will be called by our system when event occurs. Read more: https://github.com/phonedotcom/events-integration-doc'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Events Callbacks Health Status
+    definition: Callback invocations statistics
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Events Integrations Overview
+    definition: 'Combined representation of listeners, callbacks, profiles and subscriptions. Read more: https://github.com/phonedotcom/events-integration-doc'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Events Listeners
+    definition: 'Listener is an entity that associates subscriptions with callbacks. Read more: https://github.com/phonedotcom/events-integration-doc'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Events Listeners Filters
+    definition: Filters functionality. If no filters defined, than all events will be processed. If filters defined, events should match all of
+      them.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Events Listeners Subscriptions
+    definition: 'Defines what kind of events should generate a callback. Read more: https://github.com/phonedotcom/events-integration-doc'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Events Profiles
+    definition: 'A Profile allows to specify a notifications email for a callback. Notifications are emitted when there is a need to notify the
+      callback owner of some issues like timeouts, or de-registration of the callback. Read more: https://github.com/phonedotcom/events-integration-doc'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Express Service Codes
+    definition: An Express Service Code is required when a customer calls Phone.com for support. With the following services, customer may retrieve
+      the Express Service Code associated with his/her account
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Extension Contact Groups
+    definition: The entries in an extension's address book can be divided into any number of groups. This page gives an overview.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Extension Contacts
+    definition: Each extension at Phone.com can have an address book with any number of contacts.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Extensions
+    definition: Your Phone.com account will have one or more extensions.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Fax
+    definition: Phone.com customers can fax outbound documents via the Control Panel or API; They can also receive incoming fax into one of the
+      Extension mailbox. The Fax API service allows users send a fax, list all fax in the account, change the 'new' status of a fax, download
+      a fax and delete a fax.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Help Requests
+    definition: AI-based help system
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Invoices
+    definition: Invoices also knows as billing statements. "billing-api" scope is required for the token
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Listeners
+    definition: '[DEPRECATED; use Events Listeners] At the heart of every telephony system is the Events Engine. At Phone.com, our customers (and
+      their call traffic) emit millions of events per day. These events play a key role in advanced integration opportunities such as CRM integration,
+      security/auditing, and real-time contextual call control. The Events and Listeners API Services aim to simplify and standardiz'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Live Answer
+    definition: With Live Receptionist and Phone.com, your business can now have its very own live answering service, adding versatility, flexibility,
+      and availability to your company no matter the size.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Live Answer Usage
+    definition: Usage of live answer script by other Phone.com resources.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Live Answer Vendor
+    definition: Information about available Live Answer vendors
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Live Answer Vendor Token
+    definition: Live Answer Vendor Tokens are required for some integrations
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Media
+    definition: 'Your Phone.com account has two kinds of media that can be used in various ways: Hold Music and Greetings. Hold Music can be used
+      in routes, queues, and anywhere the caller might be placed on hold. Your account has access to a set of standard hold music options, and
+      optionally another set of premium hold music options. You can also upload your own hold music, subject to copyright limitations. Greet'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Media Usage
+    definition: Usage of media file by other Phone.com resources.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Menus
+    definition: We've all been on the consuming side of a phone menu before. You call a company and hear, 'Press '1' for Sales. Press '2' for
+      Support. Press '0' for the operator.' With Phone.com you can create your own menus!
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Messages
+    definition: Phone.com’s standard phone service lets you send and receive SMS/MMS messages using your Phone.com numbers. The Phone.com API
+      extends this functionality, letting you send SMS/MMS messages from your application (through your phone number and our API server) to your
+      users. You can also use the API to retrieve the history of SMS/MMS sent from / delivered to your account.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: OAuth
+    definition: The OAuth 2.0 Authorization Framework enables a third-party application to obtain limited access to HTTP API requests which require
+      an access token. This page describes how to use the /oauth/authorization and /oauth/access-token API's to generate an access token.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Orders
+    definition: History of the orders of physical devices
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Payment Methods
+    definition: Phone.com accepts credit card payment, and the Account Payment Methods API allows users to add, list, get, update and delete a
+      credit card payment method. "billing-api" scope is required for the token.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Payments
+    definition: API for payments
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Phone Number Reservation
+    definition: Allows to manage phone numbers reservations.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Phone Numbers
+    definition: Your Phone.com account has one or more phone numbers registered to it.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Phone Numbers Meta Information
+    definition: '[DEPRECATED] This interface allows you to try to obtain basic information about any phone number (CNAME, line type, etc)'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Price List
+    definition: Price List
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Prices
+    definition: Prices and taxes
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Profile
+    definition: Profile
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Queue Members
+    definition: Queues are used when you want to direct calls to a pool of phone numbers and/or extensions. A common utilization of queues is
+      for Customer Service call centers. When a queue is configured on your phone number, Phone.com will route incoming calls to members of the
+      queue. If a queue member is already on another call, our service rings the next phone number or extension in the queue. With Queue Membe
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Queues
+    definition: Queues are used when you want to direct calls to a pool of phone numbers and/or extensions. A common utilization of queues is
+      for Customer Service call centers. When a queue is configured on your phone number, Phone.com will route incoming calls to members of the
+      queue. If a queue member is already on another call, our service rings the next phone number or extension in the queue. While your calle
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Redirect URIs
+    definition: The Account OAuth Clients API supports redirect-uri. Since an OAuth Client is created by a Phone.com admin who does not know what
+      redirect uris should be assigned, API users may use the OAuth Client Redirect URIs API to create, list, get and delete redirect uris.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Routes
+    definition: Routes, a.k.a. 'Call Handling Rules' or 'Presets', are used to tell Phone.com how to handle incoming phone calls. They can be
+      used to connect your Phone.com phone number to an extension, a menu, a calling queue, or many other things. The fundamental element of a
+      route is an action. We support many different actions such as forward, menu, and voicemail. See below for the full details. In general,
+      a
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: SMS
+    definition: '[DEPRECATED; use Messages] Phone.com’s standard phone service lets you send and receive SMS messages using your Phone.com numbers.
+      The Phone.com API extends this functionality, letting you send SMS messages from your application (through your phone number and our API
+      server) to your users. You can also use the API to retrieve the history of sms sent from / delivered to your account.'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Scheduled Requests
+    definition: API for managing postponed (scheduled) API requests. "scheduled-requests" scope is required for the token.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Schedules
+    definition: Schedules are used at various places in your Phone.com account. A schedule can specify a recurring weekly pattern such as 'Monday
+      through Friday' or a single time period such as 'Thanksgiving Weekend 2015'.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Subaccounts
+    definition: This page gives an overview of how to interact with your subaccounts. Subaccounts are the same as master accounts in terms of
+      the functionality Phone.com supports. The main difference is that subaccounts are grouped with their master account for invoicing purposes.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Support Requests
+    definition: You can submit support request via API, it will be delivered to our API team
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Transactions
+    definition: Transactions (charges, taxes, payments, etc.). "billing-api" scope is required for the token.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Trunks
+    definition: 'SIP Trunks are used to connect your Phone.com account to your PBX. NOTE: SIP Trunking Customers Only -- Your Phone.com account
+      must have SIP Trunking enabled in order to use any of our trunking features. Please contact Support if you need this. Otherwise, all requests
+      to these services will result in a 403 Forbidden error.'
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: User
+    definition: Users functionality
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Video Conferences
+    definition: Endpoints for managing scheduled video conferences
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Video Config
+    definition: The Phone.com Video API allows an integrator to automate provisioning a complete cloud-based video conferencing system for a Phone.com
+      account.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Video Token
+    definition: Token for integration with Video Conference service
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Video Users
+    definition: Video-users are associated with Phone.com extensions. A video user is a collection of a domain name for the bridge id, a business
+      name, and a plan which affects the bridge capabilities in terms of maximum participants. Normally each video-user is billed to the account
+      and the pay is based on the plan selected.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Voicemail
+    definition: Phone.com’s standard phone service allows callers to leave a voicemail if the incoming call was not answered. The /voicemail services
+      show a history of voicemail and allow users to download voicemail for offline playback.
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: 10 DLC
+    definition: 10 DLC registration is required for SMS messaging
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: Snapshots
+    definition: Account snapshots
+    tags:
+    - Resource Group
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+  - term: List-Response
+    definition: 'Object declared by the contract with fields: filters, sort, total, limit, offset, items.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/List-Response
+  - term: Contact
+    definition: 'Object declared by the contract with fields: name, company, phone, fax, primary_email, alternate_email, address.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/Contact
+  - term: AccountCancellation
+    definition: 'Object declared by the contract with fields: reasons, feedback.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/AccountCancellation
+  - term: VoipBlacklist
+    definition: 'Object declared by the contract with fields: start_date, type, pattern_type, pattern, notes.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/VoipBlacklist
+  - term: Call
+    definition: 'Object declared by the contract with fields: caller_phone_number, caller_extension, caller_caller_id, caller_private, callee_phone_number,
+      callee_extension, callee_caller_id, callee_private.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/Call
+  - term: Device
+    definition: 'Object declared by the contract with fields: name, lines, code, address.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/Device
+  - term: DeviceE911
+    definition: 'Object declared by the contract with fields: contact_id.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/DeviceE911
+  - term: EventsCallback
+    definition: 'Object declared by the contract with fields: name, fallback_callback_id, profile_id, enabled, mode, config.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/EventsCallback
+  - term: EventsOverview
+    definition: 'Object declared by the contract with fields: version, callback_id, expires_at, :callback, :subscriptions, :filters.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/EventsOverview
+  - term: EventsListener
+    definition: 'Object declared by the contract with fields: version, callback_id, expires_at.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/EventsListener
+  - term: EventsListenerFilter
+    definition: 'Object declared by the contract with fields: filter_type, filter_value, not_logic.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/EventsListenerFilter
+  - term: EventsListenerSubscription
+    definition: 'Object declared by the contract with fields: :tags.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/EventsListenerSubscription
+  - term: EventsProfile
+    definition: 'Object declared by the contract with fields: name, support_email.'
+    tags:
+    - Object
+    source: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/EventsProfile

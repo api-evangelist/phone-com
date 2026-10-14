@@ -1,0 +1,575 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/phone-com/main/json-schema/phone-com-live-answer-schema.json",
+  "title": "LiveAnswer",
+  "x-generated": "2026-10-14",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/phone-com-phoenix-api-by-phone-com-openapi.yml#/components/schemas/LiveAnswer",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Live answer plan associated with the script"
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of live answer script"
+    },
+    "business_name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 255,
+      "description": "Business name"
+    },
+    "business_description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Description of your business"
+    },
+    "greeting": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 256,
+      "description": "Greeting of live answer, ex. 'Guten tag! You reached American office of Bratwurst GmBH'"
+    },
+    "call_handling_notes": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4096,
+      "description": "Call handling notes for the whole resource"
+    },
+    "enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Status"
+    },
+    "appointments_enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Wheather your business should accept appointments"
+    },
+    "appointments_description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4096,
+      "description": "Description of appointments policy"
+    },
+    "business_contact": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 70,
+          "description": "Business contact: name"
+        },
+        "company": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 70,
+          "description": "Business contact: company"
+        },
+        "fax": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 25,
+          "description": "Business contact: fax number"
+        },
+        "address": {
+          "properties": {
+            "line_1": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 55,
+              "description": "Business contact: address"
+            },
+            "line_2": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 55,
+              "description": " Business contact: address line 2"
+            },
+            "city": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 40,
+              "description": "Business contact: city"
+            },
+            "province": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 40,
+              "description": "Business contact: state"
+            },
+            "postal_code": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "maxLength": 40,
+              "description": "Business contact: zip"
+            },
+            "country": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 2,
+              "maxLength": 2,
+              "enum": [
+                "AD",
+                "AE",
+                "AF",
+                "AG",
+                "AI",
+                "AL",
+                "AM",
+                "AN",
+                "AQ",
+                "AR",
+                "AS",
+                "AT",
+                "AU",
+                "AW",
+                "AZ",
+                "BA",
+                "BB",
+                "BD",
+                "BE",
+                "BF",
+                "BG",
+                "BH",
+                "BI",
+                "BJ",
+                "BM",
+                "BN",
+                "BO",
+                "BR",
+                "BS",
+                "BT",
+                "BV",
+                "BW",
+                "BY",
+                "BZ",
+                "CA",
+                "CC",
+                "CD",
+                "CF",
+                "CG",
+                "CH",
+                "CI",
+                "CK",
+                "CL",
+                "CM",
+                "CN",
+                "CO",
+                "CR",
+                "CV",
+                "CX",
+                "CY",
+                "CZ",
+                "DE",
+                "DJ",
+                "DK",
+                "DM",
+                "DO",
+                "DZ",
+                "EC",
+                "EE",
+                "EG",
+                "EH",
+                "ER",
+                "ES",
+                "ET",
+                "FI",
+                "FJ",
+                "FK",
+                "FM",
+                "FO",
+                "FR",
+                "GA",
+                "GD",
+                "GE",
+                "GF",
+                "GG",
+                "GH",
+                "GI",
+                "GL",
+                "GM",
+                "GN",
+                "GP",
+                "GQ",
+                "GR",
+                "GS",
+                "GT",
+                "GU",
+                "GW",
+                "GY",
+                "HK",
+                "HM",
+                "HN",
+                "HR",
+                "HT",
+                "HU",
+                "ID",
+                "IE",
+                "IL",
+                "IM",
+                "IN",
+                "IO",
+                "IQ",
+                "IS",
+                "IT",
+                "JE",
+                "JM",
+                "JO",
+                "JP",
+                "KE",
+                "KG",
+                "KH",
+                "KI",
+                "KM",
+                "KN",
+                "KR",
+                "KW",
+                "KY",
+                "KZ",
+                "LA",
+                "LB",
+                "LC",
+                "LI",
+                "LK",
+                "LR",
+                "LS",
+                "LT",
+                "LU",
+                "LV",
+                "MA",
+                "MC",
+                "MD",
+                "MG",
+                "MH",
+                "MK",
+                "ML",
+                "MM",
+                "MN",
+                "MO",
+                "MP",
+                "MQ",
+                "MR",
+                "MS",
+                "MT",
+                "MU",
+                "MV",
+                "MW",
+                "MX",
+                "MY",
+                "MZ",
+                "NA",
+                "NC",
+                "NE",
+                "NF",
+                "NG",
+                "NI",
+                "NL",
+                "NO",
+                "NP",
+                "NR",
+                "NU",
+                "NZ",
+                "OM",
+                "PA",
+                "PE",
+                "PF",
+                "PG",
+                "PH",
+                "PK",
+                "PL",
+                "PM",
+                "PN",
+                "PR",
+                "PT",
+                "PW",
+                "PY",
+                "QA",
+                "RE",
+                "RO",
+                "RS",
+                "RU",
+                "RW",
+                "SA",
+                "SB",
+                "SC",
+                "SE",
+                "SG",
+                "SH",
+                "SI",
+                "SJ",
+                "SK",
+                "SM",
+                "SN",
+                "SO",
+                "SR",
+                "ST",
+                "SV",
+                "SZ",
+                "TC",
+                "TD",
+                "TF",
+                "TG",
+                "TH",
+                "TJ",
+                "TK",
+                "TM",
+                "TN",
+                "TO",
+                "TR",
+                "TT",
+                "TV",
+                "TW",
+                "TZ",
+                "UA",
+                "UG",
+                "UM",
+                "US",
+                "UY",
+                "UZ",
+                "VA",
+                "VC",
+                "VE",
+                "VG",
+                "VI",
+                "VN",
+                "VU",
+                "WF",
+                "WS",
+                "YE",
+                "YT",
+                "ZA",
+                "ZM",
+                "ZW"
+              ],
+              "description": "Business contact: country"
+            }
+          },
+          "description": "Business contact address object"
+        }
+      },
+      "description": "Business contact object"
+    },
+    "contacts": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "id": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1,
+            "description": "Contact ID"
+          },
+          "first_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128,
+            "description": "Contact first name"
+          },
+          "last_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 128,
+            "description": "Contact last name"
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 64,
+            "description": "Contact title"
+          },
+          "call_handling_notes": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 4096,
+            "description": "Call handling notes for the specific contact"
+          },
+          "is_default": {
+            "type": [
+              "boolean",
+              "null"
+            ],
+            "description": "Defines if contact should be used as default (only 1 per script; it has HIGHER priority than value in default_contact_id)"
+          },
+          "destinations": {
+            "type": "array",
+            "items": {
+              "type": [
+                "object",
+                "null"
+              ],
+              "properties": {
+                "id": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "description": "Destination ID"
+                },
+                "type": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "email",
+                    "extension",
+                    "phone_number",
+                    "voicemail"
+                  ],
+                  "description": "Destination type (can be: email, extension, phone_number or voicemail)"
+                },
+                "destination": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 256,
+                  "description": "Acctual value of destination. For extension/voicemail it should be stringified version of extension's id or \"ext:EXT_NUMBER\". For phone_number type provide phone number."
+                },
+                "is_warm_transfer": {
+                  "type": [
+                    "boolean",
+                    "null"
+                  ],
+                  "description": "Transfer type"
+                }
+              }
+            },
+            "description": "Array of of destination objects for the specific contact"
+          }
+        },
+        "required": [
+          "destinations"
+        ]
+      },
+      "description": "Array of contact objects associated with your live answer"
+    },
+    "vendor": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "Vendor ID"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 80,
+          "description": "Vendor name"
+        }
+      },
+      "description": "Live answer vendor object"
+    },
+    "did": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "properties": {
+        "id": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1,
+          "description": "ID of the Phone number"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 80,
+          "description": "Name of the Phone number"
+        },
+        "did": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 16,
+          "description": "Number of the Phone number"
+        }
+      },
+      "description": "DID (Phone number)"
+    },
+    "default_contact_id": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0,
+      "description": "Default contact ID (it has LOWER priority than flag in contacts.*.is_default) - it can be used for update only"
+    }
+  },
+  "required": [
+    "code",
+    "name",
+    "business_contact"
+  ]
+}

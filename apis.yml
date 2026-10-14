@@ -1,13 +1,15 @@
 aid: phone-com
+
 name: Phone Com
-description: Phone.com is a cloud business phone and unified communications provider for small and mid-sized
-  businesses, offering VoIP calling, SMS/MMS, video conferencing, fax, and virtual phone numbers. Its
-  developer platform is the JSON REST v4 API (codenamed "Phoenix") at api.phone.com, which gives programmatic
-  control over accounts, extensions, devices, phone numbers, call routing (routes, menus, queues, schedules),
-  media, messaging, and an event callback/listener webhook system. Authentication is OAuth 2.0. First-party
-  SDKs are published for Go, Python, PHP, Android, and JavaScript. Surfaced as a portfolio company of
-  Lightspeed Venture Partners and enriched into the API Evangelist network.
+
+description: Phone.com is a cloud business phone and unified communications provider for small and mid-sized businesses, offering VoIP calling,
+  SMS/MMS, video conferencing, fax, and virtual phone numbers. Its developer platform is the JSON REST v4 API (codenamed "Phoenix") at api.phone.com,
+  which gives programmatic control over accounts, extensions, devices, phone numbers, call routing (routes, menus, queues, schedules), media,
+  messaging, and an event callback/listener webhook system. Authentication is OAuth 2.0. First-party SDKs are published for Go, Python, PHP, Android,
+  and JavaScript. Surfaced as a portfolio company of Lightspeed Venture Partners and enriched into the API Evangelist network.
+
 url: https://raw.githubusercontent.com/api-evangelist/phone-com/refs/heads/main/apis.yml
+
 deliveryModel:
   model: saas
   open_source: false
@@ -19,6 +21,7 @@ deliveryModel:
   - pricing
   generated: '2026-08-28'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -31,16 +34,26 @@ accessModel:
   - authentication
   generated: '2026-07-22'
   method: derived
+
 image: https://github.com/phonedotcom.png
+
 x-type: company
+
 x-source: vc-portfolio
+
 x-backed-by:
 - lightspeed-venture-partners
+
 x-tier: stub
+
 x-tier-reason: portfolio-lead
+
 specificationVersion: '0.23'
+
 created: '2026-07-17'
+
 modified: '2026-10-06'
+
 tags:
 - Company
 - VoIP
@@ -49,6 +62,7 @@ tags:
 - SMS
 - Video Conferencing
 - Communications
+
 tags_raw:
 - Company
 - VoIP
@@ -58,24 +72,32 @@ tags_raw:
 - Video Conferencing
 - Communications
 - API
-apis:
-- name: phone-com-api
-  description: Phone.com v4 ("Phoenix") JSON REST API for managing accounts, extensions, devices, phone
-    numbers, call routing, media, messaging (SMS/fax), and event webhooks. OAuth 2.0 secured.
-  humanURL: https://www.phone.com/api/
-  baseURL: https://api.phone.com/v4
-  tags:
-  - VoIP
-  - Telephony
-  - Messaging
-  properties:
-  - type: Documentation
-    url: https://docs.phone.com/
-  - type: APIReference
-    url: https://apidocs.phone.com/reference
-  - type: GettingStarted
-    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+- FN: APIs.json
+  email: info@apis.io
+
 common:
+- type: AgenticAccess
+  url: agentic-access/phone-com-agentic-access.yml
+- type: Spectral
+  url: rules/phone-com-rules.yml
+- type: JSONLD
+  url: json-ld/phone-com-context.jsonld
+- type: Vocabulary
+  url: vocabulary/phone-com-vocabulary.yml
+- type: ErrorCatalog
+  url: errors/phone-com-problem-types.yml
+- type: Hosts
+  url: hosts/phone-com-hosts.yml
+- type: IntegrationEdges
+  url: integrations/phone-com-integration-edges.yml
+- type: Vendors
+  url: vendors/phone-com-vendors.yml
+- type: Leadership
+  url: https://www.phone.com/leadership/
 - url: https://www.phone.com/feed/
   type: BlogRSS
 - type: Website
@@ -132,23 +154,57 @@ common:
   url: conformance/phone-com-conformance.yml
 - type: X-MCPServerCandidate
   url: mcp/phone-com-mcp.yml
-  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate
-    — a tool list derived from the published API contracts, not an existing server. The scorer already
-    read the manifest and reported mcp_server correctly; the MCPServer type was crediting the artifact-type
-    surfaces with a server that does not exist.'
+  note: 'Renamed from MCPServer 2026-09-03 (roadmap#247): the manifest self-describes as status: candidate — a tool list derived from the published
+    API contracts, not an existing server. The scorer already read the manifest and reported mcp_server correctly; the MCPServer type was crediting
+    the artifact-type surfaces with a server that does not exist.'
 - type: Webhooks
   url: asyncapi/phone-com-events-webhooks.yml
 - type: DataModel
   url: data-model/phone-com-data-model.yml
 - type: AgentSkill
   url: skills/_index.yml
-maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-- FN: APIs.json
-  email: info@apis.io
+
+apis:
+- name: phone-com-api
+  description: Phone.com v4 ("Phoenix") JSON REST API for managing accounts, extensions, devices, phone numbers, call routing, media, messaging
+    (SMS/fax), and event webhooks. OAuth 2.0 secured.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - VoIP
+  - Telephony
+  - Messaging
+  properties:
+  - url: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
+    type: OpenAPI
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+  aid: phone-com:phone-com-api
+
 x-enrichment:
   date: '2026-07-20'
   status: enriched
   artifacts_added: 16
   pass: local-v1
+
+x-readme-harvest:
+  date: '2026-10-14'
+  ops: 333
+  tool: harvest-readme-openapi.py
+  portal: https://apidocs.phone.com

@@ -1,0 +1,767 @@
+{
+  "@context": {
+    "@vocab": "https://phone.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "phone": "https://phone.com/schema#",
+    "List-Response": "phone:List-Response",
+    "filters": {
+      "@id": "phone:filters"
+    },
+    "sort": {
+      "@id": "phone:sort"
+    },
+    "total": {
+      "@id": "phone:total",
+      "@type": "xsd:integer"
+    },
+    "limit": {
+      "@id": "phone:limit",
+      "@type": "xsd:integer"
+    },
+    "offset": {
+      "@id": "phone:offset",
+      "@type": "xsd:integer"
+    },
+    "items": {
+      "@id": "phone:items",
+      "@container": "@list"
+    },
+    "Contact": "phone:Contact",
+    "name": {
+      "@id": "phone:name",
+      "@type": "xsd:string"
+    },
+    "company": {
+      "@id": "phone:company",
+      "@type": "xsd:string"
+    },
+    "fax": {
+      "@id": "phone:fax",
+      "@type": "xsd:string"
+    },
+    "primary_email": {
+      "@id": "phone:primary_email",
+      "@type": "xsd:string"
+    },
+    "alternate_email": {
+      "@id": "phone:alternate_email",
+      "@type": "xsd:string"
+    },
+    "address": {
+      "@id": "phone:address"
+    },
+    "AccountCancellation": "phone:AccountCancellation",
+    "reasons": {
+      "@id": "phone:reasons",
+      "@container": "@list"
+    },
+    "feedback": {
+      "@id": "phone:feedback",
+      "@type": "xsd:string"
+    },
+    "VoipBlacklist": "phone:VoipBlacklist",
+    "start_date": {
+      "@id": "phone:start_date",
+      "@type": "xsd:integer"
+    },
+    "type": {
+      "@id": "phone:type",
+      "@type": "xsd:string"
+    },
+    "pattern_type": {
+      "@id": "phone:pattern_type",
+      "@type": "xsd:string"
+    },
+    "pattern": {
+      "@id": "phone:pattern",
+      "@type": "xsd:string"
+    },
+    "notes": {
+      "@id": "phone:notes",
+      "@type": "xsd:string"
+    },
+    "Call": "phone:Call",
+    "caller_phone_number": {
+      "@id": "phone:caller_phone_number",
+      "@type": "xsd:string"
+    },
+    "caller_extension": {
+      "@id": "phone:caller_extension",
+      "@type": "xsd:integer"
+    },
+    "caller_caller_id": {
+      "@id": "phone:caller_caller_id",
+      "@type": "xsd:string"
+    },
+    "caller_private": {
+      "@id": "phone:caller_private",
+      "@type": "xsd:boolean"
+    },
+    "callee_phone_number": {
+      "@id": "phone:callee_phone_number",
+      "@type": "xsd:string"
+    },
+    "callee_extension": {
+      "@id": "phone:callee_extension",
+      "@type": "xsd:integer"
+    },
+    "callee_caller_id": {
+      "@id": "phone:callee_caller_id",
+      "@type": "xsd:string"
+    },
+    "callee_private": {
+      "@id": "phone:callee_private",
+      "@type": "xsd:boolean"
+    },
+    "Device": "phone:Device",
+    "lines": {
+      "@id": "phone:lines",
+      "@container": "@list"
+    },
+    "code": {
+      "@id": "phone:code",
+      "@type": "xsd:integer"
+    },
+    "DeviceE911": "phone:DeviceE911",
+    "contact_id": {
+      "@id": "phone:contact_id",
+      "@type": "xsd:integer"
+    },
+    "EventsCallback": "phone:EventsCallback",
+    "fallback_callback_id": {
+      "@id": "phone:fallback_callback_id",
+      "@type": "xsd:integer"
+    },
+    "profile_id": {
+      "@id": "phone:profile_id",
+      "@type": "xsd:integer"
+    },
+    "enabled": {
+      "@id": "phone:enabled",
+      "@type": "xsd:boolean"
+    },
+    "mode": {
+      "@id": "phone:mode",
+      "@type": "xsd:string"
+    },
+    "config": {
+      "@id": "phone:config"
+    },
+    "EventsOverview": "phone:EventsOverview",
+    "version": {
+      "@id": "phone:version",
+      "@type": "xsd:string"
+    },
+    "callback_id": {
+      "@id": "phone:callback_id",
+      "@type": "xsd:integer"
+    },
+    "expires_at": {
+      "@id": "phone:expires_at",
+      "@type": "xsd:integer"
+    },
+    "EventsListener": "phone:EventsListener",
+    "EventsListenerFilter": "phone:EventsListenerFilter",
+    "filter_type": {
+      "@id": "phone:filter_type",
+      "@type": "xsd:string"
+    },
+    "filter_value": {
+      "@id": "phone:filter_value"
+    },
+    "not_logic": {
+      "@id": "phone:not_logic",
+      "@type": "xsd:boolean"
+    },
+    "EventsListenerSubscription": "phone:EventsListenerSubscription",
+    "EventsProfile": "phone:EventsProfile",
+    "support_email": {
+      "@id": "phone:support_email",
+      "@type": "xsd:string"
+    },
+    "ContactGroups": "phone:ContactGroups",
+    "ExtensionContact": "phone:ExtensionContact",
+    "first_name": {
+      "@id": "phone:first_name",
+      "@type": "xsd:string"
+    },
+    "middle_name": {
+      "@id": "phone:middle_name",
+      "@type": "xsd:string"
+    },
+    "last_name": {
+      "@id": "phone:last_name",
+      "@type": "xsd:string"
+    },
+    "nickname": {
+      "@id": "phone:nickname",
+      "@type": "xsd:string"
+    },
+    "organization": {
+      "@id": "phone:organization",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "phone:title",
+      "@type": "xsd:string"
+    },
+    "emails": {
+      "@id": "phone:emails",
+      "@container": "@list"
+    },
+    "addresses": {
+      "@id": "phone:addresses",
+      "@container": "@list"
+    },
+    "phone_numbers": {
+      "@id": "phone:phone_numbers",
+      "@container": "@list"
+    },
+    "group": {
+      "@id": "phone:group"
+    },
+    "Extension": "phone:Extension",
+    "usage_type": {
+      "@id": "phone:usage_type"
+    },
+    "extension": {
+      "@id": "phone:extension",
+      "@type": "xsd:integer"
+    },
+    "full_name": {
+      "@id": "phone:full_name",
+      "@type": "xsd:string"
+    },
+    "timezone": {
+      "@id": "phone:timezone",
+      "@type": "xsd:string"
+    },
+    "name_greeting": {
+      "@id": "phone:name_greeting"
+    },
+    "include_in_directory": {
+      "@id": "phone:include_in_directory",
+      "@type": "xsd:boolean"
+    },
+    "caller_id": {
+      "@id": "phone:caller_id",
+      "@type": "xsd:string"
+    },
+    "local_area_code": {
+      "@id": "phone:local_area_code",
+      "@type": "xsd:integer"
+    },
+    "enable_call_waiting": {
+      "@id": "phone:enable_call_waiting",
+      "@type": "xsd:boolean"
+    },
+    "enable_outbound_calls": {
+      "@id": "phone:enable_outbound_calls",
+      "@type": "xsd:boolean"
+    },
+    "bypass_hard_phone": {
+      "@id": "phone:bypass_hard_phone",
+      "@type": "xsd:boolean"
+    },
+    "voicemail": {
+      "@id": "phone:voicemail"
+    },
+    "call_notifications": {
+      "@id": "phone:call_notifications"
+    },
+    "presence_publish": {
+      "@id": "phone:presence_publish",
+      "@type": "xsd:boolean"
+    },
+    "presence_subscribe": {
+      "@id": "phone:presence_subscribe",
+      "@type": "xsd:boolean"
+    },
+    "route": {
+      "@id": "phone:route"
+    },
+    "Fax": "phone:Fax",
+    "to": {
+      "@id": "phone:to",
+      "@type": "xsd:string"
+    },
+    "cover_text": {
+      "@id": "phone:cover_text",
+      "@type": "xsd:string"
+    },
+    "quality": {
+      "@id": "phone:quality"
+    },
+    "from": {
+      "@id": "phone:from",
+      "@type": "xsd:string"
+    },
+    "from_name": {
+      "@id": "phone:from_name",
+      "@type": "xsd:string"
+    },
+    "media": {
+      "@id": "phone:media",
+      "@container": "@list"
+    },
+    "HelpRequest": "phone:HelpRequest",
+    "url": {
+      "@id": "phone:url"
+    },
+    "urls": {
+      "@id": "phone:urls",
+      "@container": "@list"
+    },
+    "content": {
+      "@id": "phone:content",
+      "@type": "xsd:string"
+    },
+    "Listener": "phone:Listener",
+    "LiveAnswer": "phone:LiveAnswer",
+    "business_name": {
+      "@id": "phone:business_name",
+      "@type": "xsd:string"
+    },
+    "business_description": {
+      "@id": "phone:business_description",
+      "@type": "xsd:string"
+    },
+    "greeting": {
+      "@id": "phone:greeting",
+      "@type": "xsd:string"
+    },
+    "call_handling_notes": {
+      "@id": "phone:call_handling_notes",
+      "@type": "xsd:string"
+    },
+    "appointments_enabled": {
+      "@id": "phone:appointments_enabled",
+      "@type": "xsd:boolean"
+    },
+    "appointments_description": {
+      "@id": "phone:appointments_description",
+      "@type": "xsd:string"
+    },
+    "business_contact": {
+      "@id": "phone:business_contact"
+    },
+    "contacts": {
+      "@id": "phone:contacts",
+      "@container": "@list"
+    },
+    "vendor": {
+      "@id": "phone:vendor"
+    },
+    "did": {
+      "@id": "phone:did"
+    },
+    "default_contact_id": {
+      "@id": "phone:default_contact_id",
+      "@type": "xsd:integer"
+    },
+    "Recording": "phone:Recording",
+    "origin": {
+      "@id": "phone:origin",
+      "@type": "xsd:string"
+    },
+    "duration": {
+      "@id": "phone:duration",
+      "@type": "xsd:integer"
+    },
+    "randomized": {
+      "@id": "phone:randomized",
+      "@type": "xsd:boolean"
+    },
+    "tts_text": {
+      "@id": "phone:tts_text",
+      "@type": "xsd:string"
+    },
+    "tts_voice": {
+      "@id": "phone:tts_voice",
+      "@type": "xsd:string"
+    },
+    "file": {
+      "@id": "phone:file",
+      "@type": "xsd:string"
+    },
+    "filename": {
+      "@id": "phone:filename",
+      "@type": "xsd:string"
+    },
+    "Menu": "phone:Menu",
+    "allow_extension_dial": {
+      "@id": "phone:allow_extension_dial",
+      "@type": "xsd:boolean"
+    },
+    "keypress_wait_time": {
+      "@id": "phone:keypress_wait_time",
+      "@type": "xsd:integer"
+    },
+    "keypress_error": {
+      "@id": "phone:keypress_error"
+    },
+    "timeout_handler": {
+      "@id": "phone:timeout_handler"
+    },
+    "options": {
+      "@id": "phone:options",
+      "@container": "@list"
+    },
+    "Message": "phone:Message",
+    "text": {
+      "@id": "phone:text",
+      "@type": "xsd:string"
+    },
+    "tag": {
+      "@id": "phone:tag",
+      "@type": "xsd:string"
+    },
+    "CreatedAccessToken": "phone:CreatedAccessToken",
+    "grant_type": {
+      "@id": "phone:grant_type"
+    },
+    "client_id": {
+      "@id": "phone:client_id",
+      "@type": "xsd:string"
+    },
+    "client_secret": {
+      "@id": "phone:client_secret",
+      "@type": "xsd:string"
+    },
+    "username": {
+      "@id": "phone:username",
+      "@type": "xsd:string"
+    },
+    "phonenumber": {
+      "@id": "phone:phonenumber",
+      "@type": "xsd:string"
+    },
+    "scope": {
+      "@id": "phone:scope",
+      "@type": "xsd:string"
+    },
+    "redirect_uri": {
+      "@id": "phone:redirect_uri",
+      "@type": "xsd:string"
+    },
+    "refresh_token": {
+      "@id": "phone:refresh_token",
+      "@type": "xsd:string"
+    },
+    "Order": "phone:Order",
+    "payment_method_id": {
+      "@id": "phone:payment_method_id",
+      "@type": "xsd:integer"
+    },
+    "shipping_method": {
+      "@id": "phone:shipping_method",
+      "@type": "xsd:string"
+    },
+    "devices": {
+      "@id": "phone:devices",
+      "@container": "@list"
+    },
+    "accessories": {
+      "@id": "phone:accessories",
+      "@container": "@list"
+    },
+    "PaymentMethod": "phone:PaymentMethod",
+    "account_id": {
+      "@id": "phone:account_id",
+      "@type": "xsd:integer"
+    },
+    "status": {
+      "@id": "phone:status",
+      "@type": "xsd:string"
+    },
+    "cc_token": {
+      "@id": "phone:cc_token",
+      "@type": "xsd:string"
+    },
+    "Payment": "phone:Payment",
+    "amount": {
+      "@id": "phone:amount",
+      "@type": "xsd:integer"
+    },
+    "PhoneNumberReservation": "phone:PhoneNumberReservation",
+    "time": {
+      "@id": "phone:time",
+      "@type": "xsd:integer"
+    },
+    "phone_number": {
+      "@id": "phone:phone_number"
+    },
+    "search_id": {
+      "@id": "phone:search_id"
+    },
+    "PhoneNumber": "phone:PhoneNumber",
+    "block_incoming": {
+      "@id": "phone:block_incoming",
+      "@type": "xsd:boolean"
+    },
+    "block_anonymous": {
+      "@id": "phone:block_anonymous",
+      "@type": "xsd:boolean"
+    },
+    "sms_forwarding": {
+      "@id": "phone:sms_forwarding"
+    },
+    "reservation_id": {
+      "@id": "phone:reservation_id",
+      "@type": "xsd:string"
+    },
+    "record_calls": {
+      "@id": "phone:record_calls",
+      "@type": "xsd:boolean"
+    },
+    "TaxCalculation": "phone:TaxCalculation",
+    "contact": {
+      "@id": "phone:contact"
+    },
+    "PasswordChangeObject": "phone:PasswordChangeObject",
+    "password_old": {
+      "@id": "phone:password_old",
+      "@type": "xsd:string"
+    },
+    "password_new": {
+      "@id": "phone:password_new",
+      "@type": "xsd:string"
+    },
+    "QueueMember": "phone:QueueMember",
+    "priority": {
+      "@id": "phone:priority",
+      "@type": "xsd:integer"
+    },
+    "Queue": "phone:Queue",
+    "hold_music": {
+      "@id": "phone:hold_music"
+    },
+    "max_hold_time": {
+      "@id": "phone:max_hold_time",
+      "@type": "xsd:integer"
+    },
+    "caller_id_type": {
+      "@id": "phone:caller_id_type"
+    },
+    "ring_time": {
+      "@id": "phone:ring_time",
+      "@type": "xsd:integer"
+    },
+    "strategy": {
+      "@id": "phone:strategy",
+      "@type": "xsd:string"
+    },
+    "members": {
+      "@id": "phone:members",
+      "@container": "@list"
+    },
+    "RedirectUri": "phone:RedirectUri",
+    "uri": {
+      "@id": "phone:uri",
+      "@type": "xsd:string"
+    },
+    "Route": "phone:Route",
+    "rules": {
+      "@id": "phone:rules",
+      "@container": "@list"
+    },
+    "SMS": "phone:SMS",
+    "extension_id": {
+      "@id": "phone:extension_id",
+      "@type": "xsd:integer"
+    },
+    "direction": {
+      "@id": "phone:direction"
+    },
+    "ScheduledRequest": "phone:ScheduledRequest",
+    "request_uri": {
+      "@id": "phone:request_uri",
+      "@type": "xsd:string"
+    },
+    "request_method": {
+      "@id": "phone:request_method",
+      "@type": "xsd:string"
+    },
+    "request_body": {
+      "@id": "phone:request_body"
+    },
+    "notification_email": {
+      "@id": "phone:notification_email",
+      "@type": "xsd:string"
+    },
+    "notification_policy": {
+      "@id": "phone:notification_policy",
+      "@type": "xsd:integer"
+    },
+    "scheduled_at": {
+      "@id": "phone:scheduled_at",
+      "@type": "xsd:integer"
+    },
+    "comment": {
+      "@id": "phone:comment",
+      "@type": "xsd:string"
+    },
+    "Schedule": "phone:Schedule",
+    "voip_id": {
+      "@id": "phone:voip_id",
+      "@type": "xsd:integer"
+    },
+    "Account": "phone:Account",
+    "password": {
+      "@id": "phone:password",
+      "@type": "xsd:string"
+    },
+    "verification_email": {
+      "@id": "phone:verification_email",
+      "@type": "xsd:string"
+    },
+    "billing_day": {
+      "@id": "phone:billing_day",
+      "@type": "xsd:integer"
+    },
+    "agent_id": {
+      "@id": "phone:agent_id",
+      "@type": "xsd:integer"
+    },
+    "tos_accept_date": {
+      "@id": "phone:tos_accept_date",
+      "@type": "xsd:integer"
+    },
+    "tracking_data": {
+      "@id": "phone:tracking_data",
+      "@type": "xsd:string"
+    },
+    "billing_contact": {
+      "@id": "phone:billing_contact"
+    },
+    "VerificationObject": "phone:VerificationObject",
+    "email": {
+      "@id": "phone:email",
+      "@type": "xsd:string"
+    },
+    "SupportRequest": "phone:SupportRequest",
+    "scenario": {
+      "@id": "phone:scenario",
+      "@type": "xsd:string"
+    },
+    "request_text": {
+      "@id": "phone:request_text",
+      "@type": "xsd:string"
+    },
+    "Trunk": "phone:Trunk",
+    "max_concurrent_calls": {
+      "@id": "phone:max_concurrent_calls",
+      "@type": "xsd:integer"
+    },
+    "max_minutes_per_month": {
+      "@id": "phone:max_minutes_per_month",
+      "@type": "xsd:integer"
+    },
+    "max_call_duration": {
+      "@id": "phone:max_call_duration",
+      "@type": "xsd:integer"
+    },
+    "codecs": {
+      "@id": "phone:codecs",
+      "@container": "@list"
+    },
+    "User": "phone:User",
+    "user_plan_id": {
+      "@id": "phone:user_plan_id",
+      "@type": "xsd:integer"
+    },
+    "is_admin": {
+      "@id": "phone:is_admin",
+      "@type": "xsd:boolean"
+    },
+    "UserAvatar": "phone:UserAvatar",
+    "image": {
+      "@id": "phone:image",
+      "@type": "xsd:string"
+    },
+    "VideoConference": "phone:VideoConference",
+    "subject": {
+      "@id": "phone:subject",
+      "@type": "xsd:string"
+    },
+    "agenda": {
+      "@id": "phone:agenda",
+      "@type": "xsd:string"
+    },
+    "start": {
+      "@id": "phone:start",
+      "@type": "xsd:string"
+    },
+    "time_zone": {
+      "@id": "phone:time_zone",
+      "@type": "xsd:string"
+    },
+    "auto_record": {
+      "@id": "phone:auto_record",
+      "@type": "xsd:string"
+    },
+    "one_time_access_code": {
+      "@id": "phone:one_time_access_code",
+      "@type": "xsd:boolean"
+    },
+    "auto_transcribe": {
+      "@id": "phone:auto_transcribe",
+      "@type": "xsd:boolean"
+    },
+    "mute_mode": {
+      "@id": "phone:mute_mode",
+      "@type": "xsd:string"
+    },
+    "participants": {
+      "@id": "phone:participants",
+      "@container": "@list"
+    },
+    "VideoConfig": "phone:VideoConfig",
+    "domain": {
+      "@id": "phone:domain",
+      "@type": "xsd:string"
+    },
+    "plan_code": {
+      "@id": "phone:plan_code",
+      "@type": "xsd:string"
+    },
+    "VideoUser": "phone:VideoUser",
+    "send_welcome_email": {
+      "@id": "phone:send_welcome_email",
+      "@type": "xsd:boolean"
+    },
+    "MessageTenDlcCampaign": "phone:MessageTenDlcCampaign",
+    "campaign_usage": {
+      "@id": "phone:campaign_usage"
+    },
+    "campaign_message": {
+      "@id": "phone:campaign_message"
+    },
+    "campaign_sms_content": {
+      "@id": "phone:campaign_sms_content"
+    },
+    "campaign_contact": {
+      "@id": "phone:campaign_contact"
+    },
+    "brandId": {
+      "@id": "phone:brandId",
+      "@type": "xsd:integer"
+    },
+    "MessageTenDlcBrand": "phone:MessageTenDlcBrand",
+    "business_info": {
+      "@id": "phone:business_info"
+    },
+    "business_address": {
+      "@id": "phone:business_address"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Phone Com API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Phone Com's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-14) from openapi/phone-com-phoenix-api-by-phone-com-openapi.yml.",
+  "dcterms:created": "2026-10-14",
+  "dcterms:source": [
+    "openapi/phone-com-phoenix-api-by-phone-com-openapi.yml"
+  ]
+}
