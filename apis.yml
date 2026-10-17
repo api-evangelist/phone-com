@@ -165,18 +165,16 @@ common:
   url: skills/_index.yml
 
 apis:
-- name: phone-com-api
-  description: Phone.com v4 ("Phoenix") JSON REST API for managing accounts, extensions, devices, phone numbers, call routing, media, messaging
-    (SMS/fax), and event webhooks. OAuth 2.0 secured.
+- aid: phone-com:phone-com-10-dlc-api
+  name: Phone Com 10 DLC API
+  description: 10 DLC registration is required for SMS messaging
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
-  - VoIP
-  - Telephony
-  - Messaging
+  - 10 DLC
   properties:
-  - url: openapi/phone-com-phoenix-api-by-phone-com-openapi.yml
-    type: OpenAPI
+  - type: OpenAPI
+    url: openapi/phone-com-10-dlc-api-openapi.yml
   - type: Documentation
     url: https://docs.phone.com/
   - type: APIReference
@@ -195,8 +193,2010 @@ apis:
     url: json-schema/phone-com-account-schema.json
   - type: JSONSchema
     url: json-schema/phone-com-extension-contact-schema.json
-  aid: phone-com:phone-com-api
-
+- aid: phone-com:phone-com-access-tokens-api
+  name: Phone Com Access Tokens API
+  description: Allows you to manage access tokens issued for your account.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Access Tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-access-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-account-contacts-api
+  name: Phone Com Account Contacts API
+  description: Contact which can be used for different needs, such as ordering devices
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Account Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-account-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-accounts-api
+  name: Phone Com Accounts API
+  description: This page gives an overview of how to interact with your accounts.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-api-endpoint-statistics-api
+  name: Phone Com API Endpoint Statistics API
+  description: Information about API usage statics.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - API Endpoint Statistics
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-api-endpoint-statistics-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-api-errors-api
+  name: Phone Com API Errors API
+  description: >-
+    We save API errors related to your account so you can analyze issues if for some reason you don't
+    log error responses in your application
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - API Errors
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-api-errors-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-asynchronous-call-logs-api
+  name: Phone Com Asynchronous Call Logs API
+  description: "Phone.com created the async-call-logs API endpoint to allow customers to download large\
+    \ amounts of call logs without encountering the normal Phone.com API Rate Limits. \nThis service needs\
+    \ to be activated on a per-customer basis and collect the call log data in the requested customer's\
+    \ format. (please call our support to activate and better define the format if needed) \nWhen the\
+    \ async-call-logs endpoint is invoked, the endpoint will return a list of 47 to 48 files, each representing\
+    \ the calls entered into the logs during a full hour of the last two days. The file names contain\
+    \ the time period of call logs each file encapsulates. \nThe Items returned are ordered by modification\
+    \ (i.e., creation) date; the most recent item is the first item. The files should be download using\
+    \ the provided URL(s) in the item JSON array returned by the endpoint. \nPhone.com creates the files\
+    \ at the 15 minutes mark, every hour for the previous hour. Files lifespan is 2 days, which means\
+    \ that each file will disappear after 48 hours."
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Asynchronous Call Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-asynchronous-call-logs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-available-phone-numbers-api
+  name: Phone Com Available Phone Numbers API
+  description: This service lists phone numbers that are available for purchase through Phone.com.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Available Phone Numbers
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-available-phone-numbers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-blocked-calls-api
+  name: Phone Com Blocked Calls API
+  description: >-
+    The Blocked Calls API allows users block incoming calls from specific phone numbers. If only a part
+    of a telephone number is provided, calls with callers ID matching the pattern will be blocked. For
+    example, pattern '+1212' will block all calls from NY 212 area code.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Blocked Calls
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-blocked-calls-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-call-logs-api
+  name: Phone Com Call Logs API
+  description: >-
+    The Call Logs API returns a list of call detail records for the account. The result includes the id,
+    start time, creation time, caller ID, called number, direction of call, and duration in seconds. If
+    applicable, the result may also include final action, final action duration, listen URL, and/or transcription.
+    Since the call logs usually contains many calls, API users may use filters such as start_time, created_at
+    and direction to limit the result set to calls interested. Users may also use the sorting parameters
+    such as start_time and created_at to list result in ascending or descending order.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Call Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-call-logs-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-call-reports-api
+  name: Phone Com Call Reports API
+  description: Aggregated calls statistics
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Call Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-call-reports-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-caller-ids-api
+  name: Phone Com Caller IDs API
+  description: >-
+    API users with Extension scope access token does not have access to the Phone Number API. This API
+    helps user to retrieve available account phone numbers to be used as caller id via the /Calls API.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Caller IDs
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-caller-ids-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-calls-api
+  name: Phone Com Calls API
+  description: >-
+    This API places a call to the caller phone number (or caller extension ID). If that number (or extension)
+    answers within the timeout period, then the callee DID (or extension) will be connected to the call.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Calls
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-calls-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-clients-api
+  name: Phone Com Clients API
+  description: >-
+    Phone.com API supports OAuth 2.0 Authorization Framework, which enables a third-party application
+    (client) to obtain limited access to HTTP API requests. This page describes how to use the /oauth/clients
+    API to list, get and delete client.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Clients
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-clients-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-conversations-api
+  name: Phone Com Conversations API
+  description: Represents overview of your messaging history in messenger-like format.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Conversations
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-conversations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-devices-api
+  name: Phone Com Devices API
+  description: "Extension on your Phone.com account may have SIP devices associated with them. \n\nThe\
+    \ Device API provides information about those SIP devices, such as the SIP credentials required."
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Devices
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-devices-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-events-callbacks-api
+  name: Phone Com Events Callbacks API
+  description: >-
+    Callbacks represent URLs on your side which will be called by our system when event occurs. Read more:
+    https://github.com/phonedotcom/events-integration-doc
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Events Callbacks
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-events-callbacks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-events-callbacks-health-status-api
+  name: Phone Com Events Callbacks Health Status API
+  description: Callback invocations statistics
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Events Callbacks Health Status
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-events-callbacks-health-status-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-events-integrations-overview-api
+  name: Phone Com Events Integrations Overview API
+  description: >-
+    Combined representation of listeners, callbacks, profiles and subscriptions. Read more: https://github.com/phonedotcom/events-integration-doc
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Events Integrations Overview
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-events-integrations-overview-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-events-listeners-api
+  name: Phone Com Events Listeners API
+  description: >-
+    Listener is an entity that associates subscriptions with callbacks. Read more: https://github.com/phonedotcom/events-integration-doc
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Events Listeners
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-events-listeners-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-events-listeners-filters-api
+  name: Phone Com Events Listeners Filters API
+  description: >-
+    Filters functionality. If no filters defined, than all events will be processed. If filters defined,
+    events should match all of them.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Events Listeners Filters
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-events-listeners-filters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-events-listeners-subscriptions-api
+  name: Phone Com Events Listeners Subscriptions API
+  description: >-
+    Defines what kind of events should generate a callback. Read more: https://github.com/phonedotcom/events-integration-doc
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Events Listeners Subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-events-listeners-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-events-profiles-api
+  name: Phone Com Events Profiles API
+  description: >-
+    A Profile allows to specify a notifications email for a callback. Notifications are emitted when there
+    is a need to notify the callback owner of some issues like timeouts, or de-registration of the callback.
+    Read more: https://github.com/phonedotcom/events-integration-doc
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Events Profiles
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-events-profiles-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-express-service-codes-api
+  name: Phone Com Express Service Codes API
+  description: >-
+    An Express Service Code is required when a customer calls Phone.com for support. With the following
+    services, customer may retrieve the Express Service Code associated with his/her account
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Express Service Codes
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-express-service-codes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-extension-contact-groups-api
+  name: Phone Com Extension Contact Groups API
+  description: >-
+    The entries in an extension's address book can be divided into any number of groups. This page gives
+    an overview.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Extension Contact Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-extension-contact-groups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-extension-contacts-api
+  name: Phone Com Extension Contacts API
+  description: Each extension at Phone.com can have an address book with any number of contacts.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Extension Contacts
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-extension-contacts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-extensions-api
+  name: Phone Com Extensions API
+  description: Your Phone.com account will have one or more extensions.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Extensions
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-extensions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-fax-api
+  name: Phone Com Fax API
+  description: >-
+    Phone.com customers can fax outbound documents via the Control Panel or API; They can also receive
+    incoming fax into one of the Extension mailbox. The Fax API service allows users send a fax, list
+    all fax in the account, change the 'new' status of a fax, download a fax and delete a fax.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Fax
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-fax-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-help-requests-api
+  name: Phone Com Help Requests API
+  description: AI-based help system
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Help Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-help-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-invoices-api
+  name: Phone Com Invoices API
+  description: Invoices also knows as billing statements. "billing-api" scope is required for the token
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Invoices
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-invoices-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-listeners-api
+  name: Phone Com Listeners API
+  description: >-
+    [DEPRECATED; use Events Listeners] At the heart of every telephony system is the Events Engine. At
+    Phone.com, our customers (and their call traffic) emit millions of events per day. These events play
+    a key role in advanced integration opportunities such as CRM integration, security/auditing, and real-time
+    contextual call control. The Events and Listeners API Services aim to simplify and standardize the
+    method in which events are extracted from our systems and processed. These services provide consistent
+    interfaces for internal systems to log events, manage subscriptions, and provide interfaces for external
+    systems (e.g. customer applications or integrations such as Salesforce CRM) to subscribe to account-specific
+    events and manage the subscriptions.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Listeners
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-listeners-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-live-answer-api
+  name: Phone Com Live Answer API
+  description: >-
+    With Live Receptionist and Phone.com, your business can now have its very own live answering service,
+    adding versatility, flexibility, and availability to your company no matter the size.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Live Answer
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-live-answer-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-live-answer-usage-api
+  name: Phone Com Live Answer Usage API
+  description: Usage of live answer script by other Phone.com resources.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Live Answer Usage
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-live-answer-usage-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-live-answer-vendor-api
+  name: Phone Com Live Answer Vendor API
+  description: Information about available Live Answer vendors
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Live Answer Vendor
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-live-answer-vendor-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-live-answer-vendor-token-api
+  name: Phone Com Live Answer Vendor Token API
+  description: Live Answer Vendor Tokens are required for some integrations
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Live Answer Vendor Token
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-live-answer-vendor-token-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-media-api
+  name: Phone Com Media API
+  description: >-
+    Your Phone.com account has two kinds of media that can be used in various ways: Hold Music and Greetings.
+    Hold Music can be used in routes, queues, and anywhere the caller might be placed on hold. Your account
+    has access to a set of standard hold music options, and optionally another set of premium hold music
+    options. You can also upload your own hold music, subject to copyright limitations. Greetings are
+    verbal messages that can be played in various places to provide the caller with important information.
+    For example, greetings are used when a caller first enters a menu or if they enter an invalid option.
+    You also might use a greeting to alert the user to the fact that their call is being recorded.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Media
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-media-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-media-usage-api
+  name: Phone Com Media Usage API
+  description: Usage of media file by other Phone.com resources.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Media Usage
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-media-usage-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-menus-api
+  name: Phone Com Menus API
+  description: >-
+    We've all been on the consuming side of a phone menu before. You call a company and hear, 'Press '1'
+    for Sales. Press '2' for Support. Press '0' for the operator.' With Phone.com you can create your
+    own menus!
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Menus
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-menus-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-messages-api
+  name: Phone Com Messages API
+  description: >-
+    Phone.com’s standard phone service lets you send and receive SMS/MMS messages using your Phone.com
+    numbers. The Phone.com API extends this functionality, letting you send SMS/MMS messages from your
+    application (through your phone number and our API server) to your users. You can also use the API
+    to retrieve the history of SMS/MMS sent from / delivered to your account.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Messages
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-messages-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-oauth-api
+  name: Phone Com OAuth API
+  description: >-
+    The OAuth 2.0 Authorization Framework enables a third-party application to obtain limited access to
+    HTTP API requests which require an access token. This page describes how to use the /oauth/authorization
+    and /oauth/access-token API's to generate an access token.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - OAuth
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-oauth-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-orders-api
+  name: Phone Com Orders API
+  description: History of the orders of physical devices
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Orders
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-orders-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-payment-methods-api
+  name: Phone Com Payment Methods API
+  description: >-
+    Phone.com accepts credit card payment, and the Account Payment Methods API allows users to add, list,
+    get, update and delete a credit card payment method. "billing-api" scope is required for the token.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Payment Methods
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-payment-methods-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-payments-api
+  name: Phone Com Payments API
+  description: API for payments
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-payments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-phone-number-reservation-api
+  name: Phone Com Phone Number Reservation API
+  description: Allows to manage phone numbers reservations.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Phone Number Reservation
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-phone-number-reservation-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-phone-numbers-api
+  name: Phone Com Phone Numbers API
+  description: Your Phone.com account has one or more phone numbers registered to it.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Phone Numbers
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-phone-numbers-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-phone-numbers-meta-information-api
+  name: Phone Com Phone Numbers Meta Information API
+  description: >-
+    [DEPRECATED] This interface allows you to try to obtain basic information about any phone number (CNAME,
+    line type, etc)
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Phone Numbers Meta Information
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-phone-numbers-meta-information-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-price-list-api
+  name: Phone Com Price List API
+  description: Price List
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Price List
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-price-list-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-prices-api
+  name: Phone Com Prices API
+  description: Prices and taxes
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Prices
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-prices-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-profile-api
+  name: Phone Com Profile API
+  description: Profile
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-profile-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-queue-members-api
+  name: Phone Com Queue Members API
+  description: >-
+    Queues are used when you want to direct calls to a pool of phone numbers and/or extensions. A common
+    utilization of queues is for Customer Service call centers. When a queue is configured on your phone
+    number, Phone.com will route incoming calls to members of the queue. If a queue member is already
+    on another call, our service rings the next phone number or extension in the queue. With Queue Members
+    endpoints you can manage queue members without updating the entire queue.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Queue Members
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-queue-members-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-queues-api
+  name: Phone Com Queues API
+  description: >-
+    Queues are used when you want to direct calls to a pool of phone numbers and/or extensions. A common
+    utilization of queues is for Customer Service call centers. When a queue is configured on your phone
+    number, Phone.com will route incoming calls to members of the queue. If a queue member is already
+    on another call, our service rings the next phone number or extension in the queue. While your callers
+    are waiting to be connected, you can choose to play Hold Music.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Queues
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-queues-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-redirect-uris-api
+  name: Phone Com Redirect URIs API
+  description: >-
+    The Account OAuth Clients API supports redirect-uri. Since an OAuth Client is created by a Phone.com
+    admin who does not know what redirect uris should be assigned, API users may use the OAuth Client
+    Redirect URIs API to create, list, get and delete redirect uris.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Redirect URIs
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-redirect-uris-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-routes-api
+  name: Phone Com Routes API
+  description: >-
+    Routes, a.k.a. 'Call Handling Rules' or 'Presets', are used to tell Phone.com how to handle incoming
+    phone calls. They can be used to connect your Phone.com phone number to an extension, a menu, a calling
+    queue, or many other things. The fundamental element of a route is an action. We support many different
+    actions such as forward, menu, and voicemail. See below for the full details. In general, actions
+    are processed one at a time in the order you specify, until the call is answered or disconnected.
+    Answering or disconnecting stops any additional actions from being performed. Note that several actions
+    such as  voicemail, menu, and fax completely take over processing the call and do not result in processing
+    any subsequent actions. Actions are grouped into rule sets. Rule sets can be filtered based on the
+    time of day or the caller's phone number. When processing an incoming call, Phone.com's routing engine
+    will evaluate each rule set in the order that was specified when  the route was created or updated.
+    The first matching rule set will be used, and all other rule sets will be ignored. Each route must
+    have at least one unfiltered rule set. Note that if your route contains multiple unfiltered rule sets,  only
+    the first one will be used.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Routes
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-routes-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-scheduled-requests-api
+  name: Phone Com Scheduled Requests API
+  description: >-
+    API for managing postponed (scheduled) API requests. "scheduled-requests" scope is required for the
+    token.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Scheduled Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-scheduled-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-schedules-api
+  name: Phone Com Schedules API
+  description: >-
+    Schedules are used at various places in your Phone.com account. A schedule can specify a recurring
+    weekly pattern such as 'Monday through Friday' or a single time period such as 'Thanksgiving Weekend
+    2015'.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Schedules
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-schedules-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-sms-api
+  name: Phone Com SMS API
+  description: >-
+    [DEPRECATED; use Messages] Phone.com’s standard phone service lets you send and receive SMS messages
+    using your Phone.com numbers. The Phone.com API extends this functionality, letting you send SMS messages
+    from your application (through your phone number and our API server) to your users. You can also use
+    the API to retrieve the history of sms sent from / delivered to your account.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - SMS
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-sms-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-snapshots-api
+  name: Phone Com Snapshots API
+  description: Account snapshots
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Snapshots
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-snapshots-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-subaccounts-api
+  name: Phone Com Subaccounts API
+  description: >-
+    This page gives an overview of how to interact with your subaccounts. Subaccounts are the same as
+    master accounts in terms of the functionality Phone.com supports. The main difference is that subaccounts
+    are grouped with their master account for invoicing purposes.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Subaccounts
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-subaccounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-support-requests-api
+  name: Phone Com Support Requests API
+  description: You can submit support request via API, it will be delivered to our API team
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Support Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-support-requests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-system-endpoints-api
+  name: Phone Com System endpoints API
+  description: The System endpoints API from Phone Com — 2 operation(s) for system endpoints.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - System endpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-system-endpoints-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-transactions-api
+  name: Phone Com Transactions API
+  description: >-
+    Transactions (charges, taxes, payments, etc.). "billing-api" scope is required for the token.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-trunks-api
+  name: Phone Com Trunks API
+  description: >-
+    SIP Trunks are used to connect your Phone.com account to your PBX. NOTE: SIP Trunking Customers Only
+    --  Your Phone.com account must have SIP Trunking enabled in order to use any of our trunking features.
+    Please contact Support if you need this. Otherwise, all requests to these services will result in
+    a 403 Forbidden error.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Trunks
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-trunks-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-user-api
+  name: Phone Com User API
+  description: Users functionality
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-user-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-video-conferences-api
+  name: Phone Com Video Conferences API
+  description: Endpoints for managing scheduled video conferences
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Video Conferences
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-video-conferences-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-video-config-api
+  name: Phone Com Video Config API
+  description: >-
+    The Phone.com Video API allows an integrator to automate provisioning a complete cloud-based video
+    conferencing system for a Phone.com account.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Video Config
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-video-config-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-video-token-api
+  name: Phone Com Video Token API
+  description: Token for integration with Video Conference service
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Video Token
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-video-token-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-video-users-api
+  name: Phone Com Video Users API
+  description: >-
+    Video-users are associated with Phone.com extensions. A video user is a collection of a domain name
+    for the bridge id, a business name, and a plan which affects the bridge capabilities in terms of maximum
+    participants. Normally each video-user is billed to the account and the pay is based on the plan selected.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Video Users
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-video-users-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
+- aid: phone-com:phone-com-voicemail-api
+  name: Phone Com Voicemail API
+  description: >-
+    Phone.com’s standard phone service allows callers to leave a voicemail if the incoming call was not
+    answered. The /voicemail services show a history of voicemail and allow users to download voicemail
+    for offline playback.
+  humanURL: https://www.phone.com/api/
+  baseURL: https://api.phone.com/v4
+  tags:
+  - Voicemail
+  properties:
+  - type: OpenAPI
+    url: openapi/phone-com-voicemail-api-openapi.yml
+  - type: Documentation
+    url: https://docs.phone.com/
+  - type: APIReference
+    url: https://apidocs.phone.com/reference
+  - type: GettingStarted
+    url: https://docs.phone.com/aboutdevenv/aboutdevenvhome.html
+  - type: JSONSchema
+    url: json-schema/phone-com-live-answer-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-route-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-events-overview-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-account-schema.json
+  - type: JSONSchema
+    url: json-schema/phone-com-extension-contact-schema.json
 x-enrichment:
   date: '2026-07-20'
   status: enriched

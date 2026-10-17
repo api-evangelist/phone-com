@@ -1,0 +1,1474 @@
+openapi: 3.2.0
+info:
+  title: Phoenix API by Phone.com Media API
+  description: API
+  version: 4.6.11
+servers:
+- url: https://api.phone.com
+  description: Main production server
+tags:
+- name: Media
+  description: 'Your Phone.com account has two kinds of media that can be used in various ways: Hold Music and Greetings.'
+paths:
+  /v4/accounts/{voip_id}/extensions/{extension_id}/media:
+    post:
+      summary: Create Media for extension
+      description: 'Add a media object to your extension that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)'
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: extension_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      requestBody:
+        description: 'Add a media object to your extension that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Recording'
+      security:
+      - bearerAuth: []
+      operationId: postV4AccountsByVoipIdExtensionsByExtensionIdMedia
+      x-operation-id-source: derived
+    get:
+      summary: List Media for extension
+      description: Get a list of media recordings for extension
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: extension_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - in: query
+        name: offset
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+        required: false
+        description: The number of items to skip before starting to collect the result set
+      - in: query
+        name: limit
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 500
+          default: 25
+        required: false
+        description: The number of items to return
+      - in: query
+        name: sort[id]
+        description: Sort response
+        required: false
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+      - in: query
+        name: include_subaccounts
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+        required: false
+        description: Send "1" if you want to add subaccounts data into output
+      - in: query
+        name: filters[name]
+        schema:
+          type: string
+        required: false
+        description: Name filter
+      - in: query
+        name: filters[type]
+        schema:
+          type: string
+        required: false
+        description: 'Type filter: hold_music or greeting'
+      - in: query
+        name: filters[ownership]
+        schema:
+          type: string
+        required: false
+        description: Provide 'user' to exclude generic hold music
+      - in: query
+        name: mode
+        schema:
+          type: string
+          enum:
+          - brief
+          - full
+          default: full
+        required: false
+        description: Defines mode of the data output (brief or full)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/List-Response'
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      security:
+      - bearerAuth: []
+      operationId: getV4AccountsByVoipIdExtensionsByExtensionIdMedia
+      x-operation-id-source: derived
+  /v4/accounts/{voip_id}/extensions/{extension_id}/media/{id}:
+    get:
+      summary: Get Media for extension
+      description: Show details of an individual media recording (Greeting or Hold Music) for extension
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: extension_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - in: query
+        name: mode
+        schema:
+          type: string
+          enum:
+          - brief
+          - full
+          default: full
+        required: false
+        description: Defines mode of the data output (brief or full)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      security:
+      - bearerAuth: []
+      operationId: getV4AccountsByVoipIdExtensionsByExtensionIdMediaById
+      x-operation-id-source: derived
+    put:
+      summary: Replace Media for extension
+      description: 'Update a media object to your extension. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.'
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: extension_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      requestBody:
+        description: 'Update a media object to your extension. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Recording'
+      security:
+      - bearerAuth: []
+      operationId: putV4AccountsByVoipIdExtensionsByExtensionIdMediaById
+      x-operation-id-source: derived
+    delete:
+      summary: Delete Media for extension
+      description: Delete an individual media record for extension
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: extension_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      security:
+      - bearerAuth: []
+      operationId: deleteV4AccountsByVoipIdExtensionsByExtensionIdMediaById
+      x-operation-id-source: derived
+  /v4/accounts/{voip_id}/extensions/{extension_id}/media/{id}/download:
+    get:
+      summary: Download Media for extension
+      description: Download an individual media recording for extension
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: extension_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - in: query
+        name: mode
+        schema:
+          type: string
+          enum:
+          - brief
+          - full
+          default: full
+        required: false
+        description: Defines mode of the data output (brief or full)
+      responses:
+        '200':
+          description: OK
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      security:
+      - bearerAuth: []
+      operationId: getV4AccountsByVoipIdExtensionsByExtensionIdMediaByIdDownload
+      x-operation-id-source: derived
+  /v4/accounts/{voip_id}/media:
+    post:
+      summary: Create Media
+      description: 'Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)'
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      requestBody:
+        description: 'Add a media object to your account that can be used as a greeting or hold music. Users may create a media by using the built-in Text-to-speech (TTS) facility or upload a file of their choice. (Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB)'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Recording'
+      security:
+      - bearerAuth: []
+      operationId: postV4AccountsByVoipIdMedia
+      x-operation-id-source: derived
+    get:
+      summary: List Media
+      description: Get a list of media recordings for an account.
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - in: query
+        name: offset
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+        required: false
+        description: The number of items to skip before starting to collect the result set
+      - in: query
+        name: limit
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 500
+          default: 25
+        required: false
+        description: The number of items to return
+      - in: query
+        name: sort[id]
+        description: Sort response
+        required: false
+        schema:
+          type: string
+          enum:
+          - asc
+          - desc
+      - in: query
+        name: include_subaccounts
+        schema:
+          type: integer
+          minimum: 0
+          default: 0
+        required: false
+        description: Send "1" if you want to add subaccounts data into output
+      - in: query
+        name: filters[name]
+        schema:
+          type: string
+        required: false
+        description: Name filter
+      - in: query
+        name: filters[type]
+        schema:
+          type: string
+        required: false
+        description: 'Type filter: hold_music or greeting'
+      - in: query
+        name: filters[ownership]
+        schema:
+          type: string
+        required: false
+        description: Provide 'user' to exclude generic hold music
+      - in: query
+        name: mode
+        schema:
+          type: string
+          enum:
+          - brief
+          - full
+          default: full
+        required: false
+        description: Defines mode of the data output (brief or full)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/List-Response'
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      security:
+      - bearerAuth: []
+      operationId: getV4AccountsByVoipIdMedia
+      x-operation-id-source: derived
+  /v4/accounts/{voip_id}/media/{id}:
+    put:
+      summary: Replace Media
+      description: 'Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.'
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      requestBody:
+        description: 'Update a media object to your account. Note: The maximum size for media files or JSON objects included with a POST or PUT request is 10 MB.'
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Recording'
+      security:
+      - bearerAuth: []
+      operationId: putV4AccountsByVoipIdMediaById
+      x-operation-id-source: derived
+    get:
+      summary: Get Media
+      description: Show details of an individual media recording (Greeting or Hold Music).
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - in: query
+        name: mode
+        schema:
+          type: string
+          enum:
+          - brief
+          - full
+          default: full
+        required: false
+        description: Defines mode of the data output (brief or full)
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      security:
+      - bearerAuth: []
+      operationId: getV4AccountsByVoipIdMediaById
+      x-operation-id-source: derived
+    delete:
+      summary: Delete Media
+      description: Delete an individual media record.
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      security:
+      - bearerAuth: []
+      operationId: deleteV4AccountsByVoipIdMediaById
+      x-operation-id-source: derived
+  /v4/accounts/{voip_id}/media/{id}/download:
+    get:
+      summary: Download Media
+      description: Download an individual media recording
+      tags:
+      - Media
+      parameters:
+      - name: voip_id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: integer
+          minimum: 1
+      - in: query
+        name: mode
+        schema:
+          type: string
+          enum:
+          - brief
+          - full
+          default: full
+        required: false
+        description: Defines mode of the data output (brief or full)
+      responses:
+        '200':
+          description: OK
+          content:
+            image/png:
+              schema:
+                type: string
+                format: binary
+        '400':
+          $ref: '#/components/responses/Bad-Request'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '402':
+          $ref: '#/components/responses/Payment-Required'
+        '403':
+          $ref: '#/components/responses/Forbidden'
+        '404':
+          $ref: '#/components/responses/Not-Found'
+        '409':
+          $ref: '#/components/responses/Conflict'
+        '422':
+          $ref: '#/components/responses/Validation-Error'
+        '429':
+          $ref: '#/components/responses/Too-Many-Requests'
+        '500':
+          $ref: '#/components/responses/Internal-Server-Error'
+      security:
+      - bearerAuth: []
+      operationId: getV4AccountsByVoipIdMediaByIdDownload
+      x-operation-id-source: derived
+components:
+  responses:
+    Unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              '@error':
+                type: object
+                properties:
+                  '@message':
+                    type: string
+                  '@httpStatusCode':
+                    type: integer
+                  '@time':
+                    type: string
+                  '@code':
+                    type: string
+                  '@details':
+                    type: string
+              error:
+                type: string
+              error_description:
+                type: string
+    Not-Found:
+      description: Not Found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              '@error':
+                type: object
+                properties:
+                  '@message':
+                    type: string
+                  '@httpStatusCode':
+                    type: integer
+                  '@time':
+                    type: string
+    Forbidden:
+      description: Forbidden
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              '@error':
+                type: object
+                properties:
+                  '@message':
+                    type: string
+                  '@httpStatusCode':
+                    type: integer
+                  '@time':
+                    type: string
+    Conflict:
+      description: Conflict
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              '@error':
+                type: object
+                properties:
+                  '@message':
+                    type: string
+                  '@httpStatusCode':
+                    type: integer
+                  '@time':
+                    type: string
+                  '@messages':
+                    type: array
+                    items:
+                      type: object
+                      properties: {}
+    Internal-Server-Error:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              '@error':
+                type: object
+                properties:
+                  '@message':
+                    type: string
+                  '@httpStatusCode':
+                    type: integer
+                  '@time':
+                    type: string
+                  '@code':
+                    type: string
+                  '@details':
+                    type: string
+              error:
+                type: string
+              error_description:
+                type: string
+    Validation-Error:
+      description: Validation failed
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              '@error':
+                type: object
+                properties:
+                  '@message':
+                    type: string
+                  '@httpStatusCode':
+                    type: integer
+                  '@time':
+                    type: string
+                  fields:
+                    type: object
+    Too-Many-Requests:
+      description: Too Many Requests
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              '@error':
+                type: object
+                properties:
+                  '@message':
+                    type: string
+                  '@httpStatusCode':
+                    type: integer
+                  '@time':
+                    type: string
+                  '@rateLimit':
+                    type: object
+                    properties:
+                      RateLimit-Limit:
+                        type: integer
+                      RateLimit-Remaining:
+                        type: integer
+                      RateLimit-Reset:
+                        type: integer
+                      Retry-After:
+                        type: integer
+    Bad-Request:
+      description: Bad Request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              '@error':
+                type: object
+                properties:
+                  '@message':
+                    type: string
+                  '@httpStatusCode':
+                    type: integer
+                  '@time':
+                    type: string
+    Payment-Required:
+      description: Payment Required
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              '@error':
+                type: object
+                properties:
+                  '@message':
+                    type: string
+                  '@httpStatusCode':
+                    type: integer
+                  '@time':
+                    type: string
+  schemas:
+    Recording:
+      title: Recording
+      type: object
+      properties:
+        name:
+          type: string
+          maxLength: 80
+          description: Name of recording
+        type:
+          type:
+          - string
+          - 'null'
+          enum:
+          - hold_music
+          - greeting
+          description: Can be hold_music or greeting. Indicates the purpose of this recording and where it can be used.
+        origin:
+          type: string
+          enum:
+          - file
+          - tts
+          description: Can be 'file' or 'tts'.
+        duration:
+          type:
+          - integer
+          - 'null'
+          minimum: 0
+          description: Duration of greeting.
+        notes:
+          type:
+          - string
+          - 'null'
+          maxLength: 800
+          description: Notes of greeting.
+        randomized:
+          type:
+          - boolean
+          - 'null'
+          enum:
+          - true
+          - false
+          - Y
+          - y
+          - N
+          - n
+          description: Can be Y or N. Start the greeting from random location, instead of the beginning.
+        extension:
+          type:
+          - integer
+          - 'null'
+          minimum: 1
+          description: Extension that this record belongs to.
+        tts_text:
+          type:
+          - string
+          - 'null'
+          maxLength: 800
+          description: Text used for text-to-speech conversion, maximum 800 characters
+        tts_voice:
+          type:
+          - string
+          - 'null'
+          enum:
+          - Mads / Danish
+          - Naja / Danish
+          - Lotte / Dutch
+          - Ruben / Dutch
+          - Nicole / English (Australia)
+          - Russell / English (Australia)
+          - Amy / English (Great Britain)
+          - Brian / English (Great Britain)
+          - Emma / English (Great Britain)
+          - Raveena / English (India)
+          - Ivy / English (US)
+          - Joanna / English (US)
+          - Joey / English (US)
+          - Justin / English (US)
+          - Kendra / English (US)
+          - Kimberly / English (US)
+          - Salli / English (US)
+          - Geraint / English (Wales)
+          - Celine / French
+          - Mathieu / French
+          - Chantal / French (Canada)
+          - Hans / German
+          - Marlene / German
+          - Vicki / German
+          - Dora / Icelandic
+          - Karl / Icelandic
+          - Carla / Italian
+          - Giorgio / Italian
+          - Mizuki / Japanese
+          - Takumi / Japanese
+          - Seoyeon / Korean
+          - Liv / Norwegian
+          - Jacek / Polish
+          - Jan / Polish
+          - Ewa / Polish
+          - Maja / Polish
+          - Ricardo / Portuguese
+          - Vitoria / Portuguese
+          - Cristiano / Portuguese (Brazil)
+          - Ines / Portuguese (Brazil)
+          - Carmen / Romanian
+          - Maxim / Russian
+          - Tatyana / Russian
+          - Conchita / Spanish
+          - Enrique / Spanish
+          - Miguel / Spanish (Latin America)
+          - Penelope / Spanish (Latin America)
+          - Astrid / Swedish
+          - Filiz / Turkish
+          - Gwyneth / Welsh
+          description: Allowed voices for tts
+        file:
+          type:
+          - string
+          - 'null'
+          description: Record file.
+        filename:
+          type:
+          - string
+          - 'null'
+          maxLength: 48
+          description: Name of file to be uploaded, when 'origin' is set to 'file'.
+      required:
+      - name
+      - origin
+    List-Response:
+      type: object
+      properties:
+        filters:
+          type: object
+        sort:
+          type: object
+        total:
+          type: integer
+          default: 0
+        limit:
+          type: integer
+          default: 25
+        offset:
+          type: integer
+          default: 0
+        items:
+          type: array
+          items:
+            type: object
+            properties: {}
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+x-provenance:
+  method: searched
+  source: https://apidocs.phone.com/reference
+  harvested: '2026-10-14'
+  tool: harvest-readme-openapi.py
+  note: Assembled verbatim from the OpenAPI definition ReadMe embeds in each operation page of the provider's developer portal; paths and components merged by API title, nothing authored.
+  assembled_from:
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-blocked-calls-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-devices-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-blocked-calls-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-contact-groups-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-contacts-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-conversations-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-fax-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-listeners-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-media-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-messages-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-oauth-access-tokens-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-routes-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-scheduled-requests-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-sms-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-sms.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-video-conferences-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-voicemail-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id-voicemail.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-extensions-extension-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-fax-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-callbacks-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-listeners-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-listeners-listener-id-subscriptions-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-integrations-events-profiles-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-listeners-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-live-answer-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-media-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-menus-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-messages-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-oauth-access-tokens-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-oauth-clients-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-oauth-clients-oauth-client-id-redirect-uris-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-payment-methods-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-phone-numbers-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-queues-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-queues-queue-id-members-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-routes-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-scheduled-requests-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-schedules-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-sms-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-sms.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-trunks-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-users-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-video-users-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-voicemail-id.md
+  - https://apidocs.phone.com/reference/delete_v4-accounts-voip-id-voicemail.md
+  - https://apidocs.phone.com/reference/delete_v4-oauth-access-token.md
+  - https://apidocs.phone.com/reference/get_swagger-yaml.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-10dlc-brands.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-10dlc-campaigns.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-10dlc-phone-numbers.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-api-errors.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-api-statistics.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-async-call-logs.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-blocked-calls-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-blocked-calls.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-call-logs-id-recording-download.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-call-logs-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-call-logs.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-call-reports.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-contacts.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-conversations.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-device-extensions-price-list.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices-accessories-price-list.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices-id-e911.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices-price-list.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-devices.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-express-service-codes-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-express-service-codes.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-blocked-calls-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-blocked-calls.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-call-logs-id-recording-download.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-call-logs-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-call-logs.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-call-reports.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-caller-ids.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-contact-groups-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-contact-groups.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-contacts-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-contacts.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-conversations-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-conversations.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-express-service-codes-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-express-service-codes.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-extensions.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-fax-id-download.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-fax-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-fax.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks-id-health.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-overview.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-listeners-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-listeners.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-media-id-download.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-media-id-usage.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-media-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-media.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-messages-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-messages.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-oauth-access-tokens-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-oauth-access-tokens.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-phone-numbers-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-phone-numbers.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-routes-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-routes.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-scheduled-requests-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-scheduled-requests.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-sms-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-sms.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-video-conferences-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-video-conferences.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-video-token.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-video-user.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-voicemail-id-download.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-voicemail-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id-voicemail.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions-extension-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-extensions.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-fax-id-download.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-fax-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-fax.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-callbacks-callback-id-health.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-callbacks-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-callbacks.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-listener-id-subscriptions-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners-listener-id-subscriptions.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-listeners.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-overview.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-profiles-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-integrations-events-profiles.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-invoices-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-invoices-invoice-id-transactions-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-invoices-invoice-id-transactions.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-invoices.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-listeners-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-listeners.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-live-answer-id-usage.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-live-answer-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-live-answer-vendors.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-live-answer.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-media-id-download.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-media-id-usage.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-media-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-media.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-menus-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-menus.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-messages-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-messages.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-access-tokens-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-access-tokens.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-clients-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-clients-oauth-client-id-redirect-uris-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-clients-oauth-client-id-redirect-uris.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-oauth-clients.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-orders-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-orders.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-payment-methods-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-payment-methods.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-payments.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-phone-numbers-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-phone-numbers.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-queues-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-queues-queue-id-members-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-queues-queue-id-members.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-queues.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-routes-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-routes.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-scheduled-requests-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-scheduled-requests.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-schedules-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-schedules.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-shipping-price-list.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-sms-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-sms.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-snapshots-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-snapshots.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-subaccounts.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-trunks-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-trunks.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-users-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-users-statistics.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-users.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-video-users-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-video-users.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-video.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-voicemail-id-download.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-voicemail-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id-voicemail.md
+  - https://apidocs.phone.com/reference/get_v4-accounts-voip-id.md
+  - https://apidocs.phone.com/reference/get_v4-accounts.md
+  - https://apidocs.phone.com/reference/get_v4-devices-accessories-price-list.md
+  - https://apidocs.phone.com/reference/get_v4-devices-price-list.md
+  - https://apidocs.phone.com/reference/get_v4-oauth-access-token-details.md
+  - https://apidocs.phone.com/reference/get_v4-oauth-access-token.md
+  - https://apidocs.phone.com/reference/get_v4-phone-numbers-available.md
+  - https://apidocs.phone.com/reference/get_v4-phone-numbers-meta.md
+  - https://apidocs.phone.com/reference/get_v4-ping.md
+  - https://apidocs.phone.com/reference/get_v4-public-phone-numbers-available.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-devices-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-contacts-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-conversations-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-fax-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-messages-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-routes-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-sms-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id-voicemail-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-extensions-extension-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-fax-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-integrations-events-callbacks-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-integrations-events-listeners-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-integrations-events-profiles-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-live-answer-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-messages-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-orders-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-payment-methods-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-phone-numbers-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-queues-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-routes-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-schedules-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-sms-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-trunks-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-users-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-video.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id-voicemail-id.md
+  - https://apidocs.phone.com/reference/patch_v4-accounts-voip-id.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-10dlc-brands.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-10dlc-campaigns.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-blocked-calls.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-calls.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-cancellation.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-contacts.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-devices-id-e911.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-devices.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-blocked-calls.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-calls.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-contact-groups.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-contacts.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-fax.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-callbacks.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners-listener-id-subscriptions.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-listeners.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-overview.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-integrations-events-profiles.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-listeners.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-media.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-messages.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-routes.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-scheduled-requests.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-sms.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-support-requests.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-video-conferences.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions-extension-id-video-user.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-extensions.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-fax.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-help-requests.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-callbacks.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-listeners-listener-id-filters.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-listeners-listener-id-subscriptions.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-listeners.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-overview.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-integrations-events-profiles.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-listeners.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-live-answer-vendors-vendor-id-tokens.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-live-answer.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-media.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-menus.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-messages.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-oauth-clients-oauth-client-id-redirect-uris.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-orders.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-payment-methods.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-payments.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-phone-numbers-reserved.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-phone-numbers.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-profile-password.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-queues-queue-id-members.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-queues.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-routes.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-scheduled-requests.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-schedules.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-sms.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-subaccounts-verification.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-subaccounts.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-support-requests.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-tax-calculations.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-trunks.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-users-id-avatar.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-users-id-invitations.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-users-id-password-reset-requests.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-users.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-video-users.md
+  - https://apidocs.phone.com/reference/post_v4-accounts-voip-id-video.md
+  - https://apidocs.phone.com/reference/post_v4-oauth-access-token-notes.md
+  - https://apidocs.phone.com/reference/post_v4-oauth-access-token.md
+  - https://apidocs.phone.com/reference/post_v4-public-phone-numbers-reserved.md
+  - https://apidocs.phone.com/reference/post_v4-public-tax-calculations.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-devices-id-e911.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-devices-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-contact-groups-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-contacts-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-listeners-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-media-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-routes-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id-video-conferences-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-extensions-extension-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-listeners-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-media-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-menus-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-phone-numbers-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-queues-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-routes-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-schedules-id.md
+  - https://apidocs.phone.com/reference/put_v4-accounts-voip-id-trunks-id.md
+  merge:
+    pages: 333
+    deduped: 3463
+    conflicts_kept_first: 0
