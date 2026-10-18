@@ -171,6 +171,8 @@ apis:
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
+  - 10DLC
+  tags_raw:
   - 10 DLC
   properties:
   - type: OpenAPI
@@ -255,6 +257,8 @@ apis:
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -1305,6 +1309,8 @@ apis:
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
+  - Message
+  tags_raw:
   - Messages
   properties:
   - type: OpenAPI
@@ -1336,6 +1342,8 @@ apis:
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
+  - Authentication
+  tags_raw:
   - OAuth
   properties:
   - type: OpenAPI
@@ -1364,6 +1372,8 @@ apis:
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
+  - Order
+  tags_raw:
   - Orders
   properties:
   - type: OpenAPI
@@ -1592,6 +1602,8 @@ apis:
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
+  - Profiles
+  tags_raw:
   - Profile
   properties:
   - type: OpenAPI
@@ -1791,6 +1803,8 @@ apis:
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
+  - Schedule
+  tags_raw:
   - Schedules
   properties:
   - type: OpenAPI
@@ -1967,6 +1981,8 @@ apis:
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
@@ -1999,6 +2015,8 @@ apis:
   humanURL: https://www.phone.com/api/
   baseURL: https://api.phone.com/v4
   tags:
+  - trunks
+  tags_raw:
   - Trunks
   properties:
   - type: OpenAPI
