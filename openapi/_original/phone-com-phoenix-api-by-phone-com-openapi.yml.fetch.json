@@ -1,0 +1,12 @@
+{
+ "url": "https://api.phone.com/swagger.yaml",
+ "requested_url": "https://api.phone.com/swagger.yaml",
+ "status": 200,
+ "content_type": "application/x-yaml",
+ "bytes": 806950,
+ "sha256": "69ad0eded17fdfe5ea2d4d693a5524806130c516b3541a906159ee4f1d1350ee",
+ "fetched_at": "2026-10-19",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
