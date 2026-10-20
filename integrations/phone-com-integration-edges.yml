@@ -1,4 +1,4 @@
-generated: '2026-10-14'
+generated: '2026-10-20'
 method: searched
 source:
 - https://zapier.com/apps/phone-com/integrations
@@ -47,6 +47,31 @@ marketplace_apps:
   - key: contact
     label: Find Contact
 edges:
+- partner_name: Zapier
+  partner: zapier
+  partner_match: aggregator
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://zapier.com/apps/phone-com/integrations
+  category: null
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: Phone.com
+    matched_domain: phone.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: phone-com
+    beta: false
+    builder: unknown (not in the directory record)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
 - partner_name: Airtable
   partner: airtable
   partner_match: domain
@@ -204,7 +229,7 @@ edges:
   category: Scheduling & Booking
   partner_url: https://www.housecallpro.com/
 - partner_name: Google Forms (Legacy)
-  partner: google
+  partner: google-forms
   partner_match: domain+name-among-holders
   partner_candidate: null
   type: marketplace
@@ -407,31 +432,6 @@ edges:
   direction: third-party
   category: Microsoft
   partner_url: https://products.office.com/en-us/microsoft-teams/group-chat-software
-- partner_name: Zapier
-  partner: zapier
-  partner_match: aggregator
-  type: marketplace
-  marketplace: zapier-directory
-  channel: ipaas-listing
-  relationship: ipaas-bridge
-  direction: third-party
-  evidence: https://zapier.com/apps/phone-com/integrations
-  category: null
-  contract_reference:
-    register: Zapier app directory (zapier.com/api/v4/apps)
-    spec_file: null
-    role: ipaas-connector:zapier
-    registered_name: Phone.com
-    matched_domain: phone.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: phone-com
-    beta: false
-    builder: unknown (not in the directory record)
-  detected_by: sweep-workflow-automation.py
-  first_seen: '2026-10-15'
 templates:
 - title: Create new Airtable records from new Phone.com calls
   url: https://zapier.com/apps/airtable/integrations/phone-com/1673558/create-new-airtable-records-from-new-phonecom-calls
