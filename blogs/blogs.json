@@ -3,25 +3,23 @@
   "feeds": [
     {
       "source": "https://www.phone.com/blog/",
-      "feed_url": "https://www.phone.com/blog/feed/",
+      "feed_url": "https://www.phone.com/blog/rss/",
       "title": "",
-      "saved": 3,
+      "saved": 0,
       "method": "discovered"
     },
     {
       "source": "https://www.phone.com/feed/",
-      "feed_url": "https://www.phone.com/feed/",
+      "error": "HTTPError"
+    },
+    {
+      "source": "https://www.phone.com/blog/feed/",
+      "feed_url": "https://www.phone.com/blog/feed/",
       "title": "",
       "saved": 0,
       "method": "feed"
-    },
-    {
-      "source": "https://support.phone.com/",
-      "feed_url": "",
-      "saved": 0,
-      "skipped": "community-shaped; a vendor feed already saved this run (roadmap#239)"
     }
   ],
-  "post_count": 3,
-  "fetched": "2026-10-10T13:15:00Z"
+  "post_count": 10,
+  "fetched": "2026-10-17T14:53:57Z"
 }
